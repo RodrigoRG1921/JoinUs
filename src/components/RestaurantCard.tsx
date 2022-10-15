@@ -1,6 +1,6 @@
-import React from "react"
-import {Text, View, Image, StyleSheet} from "react-native"
-import {Surface, Stack} from "@react-native-material/core"
+import React from 'react'
+import {Text, View, Image, StyleSheet} from 'react-native'
+import {Surface, Stack} from '@react-native-material/core'
 
 interface Props {
   name: string
@@ -23,15 +23,15 @@ const RestaurantCard = ({
     <Stack items="center" style={{margin: 10}}>
       <Surface elevation={7} category="medium" style={styles.card}>
         <Text style={styles.title}>{name}</Text>
-        <View style={{flexDirection: "row", flex: 1}}>
+        <View style={{flexDirection: 'row', flex: 1}}>
           <View style={styles.cardSection}>
             <Image source={{uri: image}} style={styles.image} />
             <Text style={styles.schedule}>{schedule}</Text>
           </View>
           <View style={styles.cardSection}>
             <Text style={styles.address}>{address}</Text>
-            <Text style={styles.stars}>{"*".repeat(rating)}</Text>
-            <Text style={styles.cost}>{"$".repeat(cost)}</Text>
+            <Text style={styles.stars}>{'*'.repeat(rating)}</Text>
+            <Text style={styles.cost}>{'$'.repeat(cost)}</Text>
           </View>
         </View>
       </Surface>
@@ -43,34 +43,34 @@ export default RestaurantCard
 
 const styles = StyleSheet.create({
   card: {
-    width: "80%",
+    width: '80%',
     height: 150,
-    alignItems: "center",
+    alignItems: 'center',
   },
   cardSection: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     // padding: 10,
   },
   title: {
     fontSize: 20,
-    color: "black",
+    color: 'black',
   },
   address: {
-    color: "black",
+    color: 'black',
     fontSize: 15,
   },
   stars: {
-    color: "black",
+    color: 'black',
     fontSize: 20,
   },
   cost: {
-    color: "green",
+    color: 'green',
     fontSize: 20,
   },
-  image: {width: "80%", height: 90, borderRadius: 20},
+  image: {width: '80%', height: 90, borderRadius: 20},
   schedule: {
-    color: "black",
+    color: 'black',
   },
 })
