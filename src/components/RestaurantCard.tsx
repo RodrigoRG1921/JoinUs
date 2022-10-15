@@ -25,8 +25,8 @@ const RestaurantCard = ({
         <Text style={styles.title}>{name}</Text>
         <View style={{flexDirection: "row", flex: 1}}>
           <View style={styles.cardSection}>
-            <Image source={{uri: image}} style={{width: "80%", height: 80}} />
-            <Text>{schedule}</Text>
+            <Image source={{uri: image}} style={styles.image} />
+            <Text style={styles.schedule}>{schedule}</Text>
           </View>
           <View style={styles.cardSection}>
             <Text style={styles.address}>{address}</Text>
@@ -68,5 +68,9 @@ const styles = StyleSheet.create({
   cost: {
     color: "green",
     fontSize: 20,
+  },
+  image: {width: "80%", height: 90, borderRadius: 20},
+  schedule: {
+    color: "black",
   },
 })
