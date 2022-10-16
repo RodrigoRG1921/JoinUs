@@ -1,0 +1,222 @@
+[
+  {
+      "Nombre": "Mariscos Tenorio",
+      "Dirección": "Av. del Pinar 3223",
+      "Imagen": "https://www.facebook.com/photo/?fbid=536368658221016&set=a.536368618221020",
+      "Calificación": "4.8",
+      "Horario": "12:30 - 18:00",
+      "Rango Precios": "$$",
+      "Coordenadas (Latitud, Longitud)": "20.620867,-103.4182268",
+      "Lista de Tags": "Fumar, Terraza, Cerveza, Vegano, Pet friendly",
+      "Categoría": "Mariscos"
+  },
+  {
+      "Nombre": "Perros Ahogados",
+      "Dirección": "Av. Sierra de Mazamitla 6009",
+      "Imagen": "https://www.ocioenlinea.com/gastronomia/restaurantes-perros-ahogados-ofrece-hot-dogs-tortas-ahogadas.html",
+      "Calificación": "4.8",
+      "Horario": "10:00 - 22:00",
+      "Rango Precios": "$$",
+      "Coordenadas (Latitud, Longitud)": "20.6197965,-103.4206811",
+      "Lista de Tags": "Pet friendly, Tarjeta, Para llevar",
+      "Categoría": "Hot Dogs"
+  },
+  {
+      "Nombre": "Osteria 10",
+      "Dirección": "C. Manuel López Cotilla 1498-A-1498-A, Col Americana, Americana, 44160 Guadalajara, Jal.",
+      "Imagen": "https://www.tripadvisor.com.mx/Restaurant_Review-g150798-d877807-Reviews-Osteria_10-Guadalajara_Guadalajara_Metropolitan_Area.html",
+      "Calificación": "4.6",
+      "Horario": "14:00 - 23:30",
+      "Rango Precios": "$$",
+      "Coordenadas (Latitud, Longitud)": "20.6738298,-103.3702706",
+      "Lista de Tags": "LGBTQ+, Romantico, Informal, Bar, Alcohol",
+      "Categoría": "Italiano"
+  },
+  {
+      "Nombre": "La Chiluda",
+      "Dirección": "Av Inglaterra 3120, Vallarta Poniente, 44110 Guadalajara, Jal.",
+      "Imagen": "https://es.foursquare.com/v/la-chiluda-bar/4d4e1cb29a2a6ea8414a1f6f",
+      "Calificación": "4.7",
+      "Horario": "14:00 - 03:00",
+      "Rango Precios": "$",
+      "Coordenadas (Latitud, Longitud)": "20.6718875,-103.3943286",
+      "Lista de Tags": "Cocteleria, Deportes, Vino, Grupos",
+      "Categoría": "Bar"
+  },
+  {
+      "Nombre": "McCarthy's Irish Pub Gran Plaza",
+      "Dirección": "Av. Ignacio L. Vallarta, Don Bosco Vallarta, 45049 Zapopan, Jal.",
+      "Imagen": "https://es.restaurantguru.com/McCarthys-Irish-Pub-Gran-Plaza-Zapopan",
+      "Calificación": "4.3",
+      "Horario": "13:12 - 23:59",
+      "Rango Precios": "$$",
+      "Coordenadas (Latitud, Longitud)": "20.6744099,-103.406777",
+      "Lista de Tags": "Musica en vivo, Terraza, Cocteleria, Acceso silla de ruedas",
+      "Categoría": "Pub Bar"
+  },
+  {
+      "Nombre": "WingMan Naciones Unidas",
+      "Dirección": "Avenida Naciones Unidas 5264 Zapopan, 45110 Guadalajara, Jal.",
+      "Imagen": "https://es.restaurantguru.com/Wingman-Zapopan",
+      "Calificación": "4",
+      "Horario": "14:00 - 0:00",
+      "Rango Precios": "$$",
+      "Coordenadas (Latitud, Longitud)": "20.687603,-103.4281388",
+      "Lista de Tags": "Cerveza, Deportes, Informal",
+      "Categoría": "Alitas"
+  },
+  {
+      "Nombre": "La Tetería",
+      "Dirección": "Libertad 1697, Col Americana, Americana, 44160 Guadalajara, Jal.",
+      "Imagen": "https://es.restaurantguru.com/La-Teteria-Guadalajara",
+      "Calificación": "4.4",
+      "Horario": "15:30 - 23:00",
+      "Rango Precios": "$$",
+      "Coordenadas (Latitud, Longitud)": "20.6717003,-103.3647619",
+      "Lista de Tags": "Te, Cafe, Postres",
+      "Categoría": "Salon de Te"
+  },
+  {
+      "Nombre": "TOM Topfloor",
+      "Dirección": "Av. Chapultepec 20, Ladrón de Guevara, Americana, 44600 Guadalajara, Jal.",
+      "Imagen": "https://www.instagram.com/tomtopfloor/",
+      "Calificación": "4.3",
+      "Horario": "19:00 - 02:00",
+      "Rango Precios": "$$$",
+      "Coordenadas (Latitud, Longitud)": "20.6763489,-103.3704631",
+      "Lista de Tags": "Informal, Grupos, Costeleria",
+      "Categoría": "Restaurante"
+  },
+  {
+      "Nombre": "El Abajeño Tlaquepaque",
+      "Dirección": "C. Juárez 231, Centro, 45500 San Pedro Tlaquepaque, Jal.",
+      "Imagen": "https://es.restaurantguru.com/El-Abajeno-Zapopan",
+      "Calificación": "4.4",
+      "Horario": "12:00 - 22:00",
+      "Rango Precios": "$$",
+      "Coordenadas (Latitud, Longitud)": "20.6380093,-103.3164739",
+      "Lista de Tags": "Musica en vivo, Terraza, Cocteleria, Acceso silla de ruedas",
+      "Categoría": "Restaurant Bar"
+  },
+  {
+      "Nombre": "Carbón - Parrilla de Barrio",
+      "Dirección": "Av Guadalupe 1261, Chapalita Oriente, 45040 Zapopan, Jal.",
+      "Imagen": "https://es.restaurantguru.com/Carbon-Parrilla-de-Barrio-Tlaquepaque-Tlaquepaque",
+      "Calificación": "4.5",
+      "Horario": "13:00 - 0:00",
+      "Rango Precios": "$$",
+      "Coordenadas (Latitud, Longitud)": "20.665878,-103.4059463",
+      "Lista de Tags": "LGBTQ+, Romantico, Informal, Bar, Alcohol",
+      "Categoría": "Cortes"
+  },
+  {
+      "Nombre": "Asaditos los compitas",
+      "Dirección": "Av. Niño Obrero 656, Jardín de San Ignacio, 45040 Zapopan, Jal.",
+      "Imagen": "https://es.restaurantguru.com/Tacos-Asaditos-Los-Compitas-Zapopan",
+      "Calificación": "4.4",
+      "Horario": "13:00 - 01:00",
+      "Rango Precios": "$$",
+      "Coordenadas (Latitud, Longitud)": "20.6676524,-103.411575",
+      "Lista de Tags": "Solo Efectivo, Grupos, Domicilio",
+      "Categoría": "Taqueria"
+  },
+  {
+      "Nombre": "La Santa",
+      "Dirección": "Real de Acueducto 371, Puerta de Hierro, 45116 Zapopan, Jal.",
+      "Imagen": "https://es.restaurantguru.com/La-Santa-Zapopan",
+      "Calificación": "3.9",
+      "Horario": "22:30 - 04:00",
+      "Rango Precios": "$$$$",
+      "Coordenadas (Latitud, Longitud)": "20.7117469,-103.4120892",
+      "Lista de Tags": "Cocteleria, Alcohol, Cerveza, Formal",
+      "Categoría": "Club Nocturno"
+  },
+  {
+      "Nombre": "Krispy Kreme",
+      "Dirección": "Real de Acueducto 160, Real Acueducto, 45110 Zapopan, Jal.",
+      "Imagen": "https://es.restaurantguru.com/Krispy-Kreme-Guadalajara-2",
+      "Calificación": "4.5",
+      "Horario": "24 hrs",
+      "Rango Precios": "$$",
+      "Coordenadas (Latitud, Longitud)": "20.7098633,-103.4124324",
+      "Lista de Tags": "Cafe, Postres",
+      "Categoría": "Donas"
+  },
+  {
+      "Nombre": "Cabanna Restaurant",
+      "Dirección": "Av. México 2972, Juan Manuel, 44680 Guadalajara, Jal.",
+      "Imagen": "https://es.restaurantguru.com/San-Lorenzo-St-La-Gourmeteria-Guadalajara",
+      "Calificación": "4.6",
+      "Horario": "12:00 - 0:00",
+      "Rango Precios": "$$$",
+      "Coordenadas (Latitud, Longitud)": "20.679927,-103.3929916",
+      "Lista de Tags": "Deportes, Alcohol, Menu para niños",
+      "Categoría": "Mariscos"
+  },
+  {
+      "Nombre": "Cafe pal Real",
+      "Dirección": "C. Lope de Vega 113, Arcos Vallarta, 44130 Guadalajara, Jal.",
+      "Imagen": "https://es.restaurantguru.com/Palreal-Guadalajara",
+      "Calificación": "4.6",
+      "Horario": "8:00 - 18:00",
+      "Rango Precios": "$$",
+      "Coordenadas (Latitud, Longitud)": "20.6729596,-103.3819876",
+      "Lista de Tags": "Cafe, Te, Vegano",
+      "Categoría": "Brunch"
+  },
+  {
+      "Nombre": "Tacos Gascon",
+      "Dirección": "Av. Alemania 1803, Moderna, 44190 Guadalajara, Jal.",
+      "Imagen": "https://es.restaurantguru.com/Tacos-Gascon-Guadalajara-2",
+      "Calificación": "4.6",
+      "Horario": "19:00 - 0:00",
+      "Rango Precios": "$$",
+      "Coordenadas (Latitud, Longitud)": "20.6662383,-103.3675735",
+      "Lista de Tags": "Cena, Postres, Informal",
+      "Categoría": "Taqueria"
+  },
+  {
+      "Nombre": "Brooken Cheese",
+      "Dirección": "C. Pedro Moreno 1476, Col Americana, Americana, 44160 Guadalajara, Jal.",
+      "Imagen": "https://es.restaurantguru.com/Broken-Cheese-Guadalajara",
+      "Calificación": "4.4",
+      "Horario": "13:00 - 23:00",
+      "Rango Precios": "$",
+      "Coordenadas (Latitud, Longitud)": "20.6755974,-103.3699865",
+      "Lista de Tags": "Informal, Bar, Grupo",
+      "Categoría": "Pizza"
+  },
+  {
+      "Nombre": "Cerveceria Chapultepec",
+      "Dirección": "C. Manuel López Cotilla 1537, Col Americana, Lafayette, 44160 Guadalajara, Jal.",
+      "Imagen": "https://es.restaurantguru.com/Cerveceria-Chapultepec-Guadalajara-2",
+      "Calificación": "4.4",
+      "Horario": "13:00 - 02:30",
+      "Rango Precios": "$",
+      "Coordenadas (Latitud, Longitud)": "20.6735631,-103.3723295",
+      "Lista de Tags": "Alcohol, Comida, Informal, Grupos",
+      "Categoría": "Bar"
+  },
+  {
+      "Nombre": "La Trattoria de Guadalajara",
+      "Dirección": "Av Niños Héroes 3051, Jardines del Bosque, 44520 Guadalajara, Jal.",
+      "Imagen": "https://es.restaurantguru.com/Fonda-La-Tratoria-Guadalajara",
+      "Calificación": "4.7",
+      "Horario": "13:00 - 22:00",
+      "Rango Precios": "$$$",
+      "Coordenadas (Latitud, Longitud)": "20.6662716,-103.3930049",
+      "Lista de Tags": "Bar, Romantico, Alcohol, Vino",
+      "Categoría": "Italiano"
+  },
+  {
+      "Nombre": "Suehiro",
+      "Dirección": "Av. de la Paz 1701, Col Americana, Americana, 44160 Guadalajara, Jal.",
+      "Imagen": "https://es.restaurantguru.com/Suehiro-Guadalajara",
+      "Calificación": "4.7",
+      "Horario": "13:30 - 23:00",
+      "Rango Precios": "$$$",
+      "Coordenadas (Latitud, Longitud)": "20.6708576,-103.3652088",
+      "Lista de Tags": "Catering, Cocteles, Saludable",
+      "Categoría": "Japones"
+  }
+]
