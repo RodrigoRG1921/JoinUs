@@ -1,11 +1,5 @@
 import React from 'react'
-import {
-  View,
-  TouchableOpacity,
-  StyleSheet,
-  NativeSyntheticEvent,
-  TextInputSubmitEditingEventData,
-} from 'react-native'
+import {View, TouchableOpacity, StyleSheet} from 'react-native'
 import {TextInput, IconButton, Surface} from '@react-native-material/core'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
