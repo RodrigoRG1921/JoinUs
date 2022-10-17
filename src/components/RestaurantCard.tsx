@@ -8,7 +8,7 @@ interface Props {
   schedule: string
   address: string
   rating: number
-  cost: number
+  cost: string
 }
 
 const RestaurantCard = ({
@@ -19,6 +19,7 @@ const RestaurantCard = ({
   rating,
   cost,
 }: Props) => {
+  console.log(image)
   return (
     <Stack items="center" style={{margin: 10}}>
       <Surface elevation={7} category="medium" style={styles.card}>
@@ -31,7 +32,7 @@ const RestaurantCard = ({
           <View style={styles.cardSection}>
             <Text style={styles.address}>{address}</Text>
             <Text style={styles.stars}>{'*'.repeat(rating)}</Text>
-            <Text style={styles.cost}>{'$'.repeat(cost)}</Text>
+            <Text style={styles.cost}>{cost}</Text>
           </View>
         </View>
       </Surface>
