@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     margin: 8,
   },
   card: {
-    width: '80%',
+    width: '100%',
     alignItems: 'center',
     padding: 5,
   },
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
   },
   address: {
     color: 'black',
-    fontSize: 12,
+    fontSize: 16,
   },
   stars: {
     color: 'black',
