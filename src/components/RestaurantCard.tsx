@@ -43,7 +43,7 @@ export default RestaurantCard
 
 const styles = StyleSheet.create({
   button: {
-    margin: 8,
+    marginVertical: 8,
   },
   card: {
     width: '100%',
