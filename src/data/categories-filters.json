@@ -1,8 +1,21 @@
 {
   "categories": [
-    "Mariscos", "Hot Dogs", "Italiano", "Bar", "Pub Bar", "Alitas", "Salon de Te",
-    "Restaurante", "Restaurant Bar", "Cortes", "Taqueria", "Club Nocturno", "Donas",
-    "Mariscos", "Brunch", "Taqueria", "Pizza", "Bar", "Italiano", "Japones"
+    { "key": "mariscos", "title": "Mariscos", "imageUri": "https://media.istockphoto.com/photos/table-top-view-of-spicy-food-picture-id1316145932?b=1&k=20&m=1316145932&s=170667a&w=0&h=feyrNSTglzksHoEDSsnrG47UoY_XX4PtayUPpSMunQI=" },
+    { "key" : "Hot Dogs", "title": "Hot Dogs", "imageUri": "https://media.istockphoto.com/photos/paleo-diet-healthy-food-background-picture-id1301565375?b=1&k=20&m=1301565375&s=170667a&w=0&h=D-u_kxPS9SL5MWmhN0xbwfNxPmqbqzhyjYvypM7V7xU=" },
+    { "key" : "Italiano", "title": "Italiano", "imageUri": "https://media.istockphoto.com/photos/delicious-meal-picture-id1295387240?b=1&k=20&m=1295387240&s=170667a&w=0&h=KtWYFjSBgpNgVkE3P-WKZ2F6V-VxyUBBtJIP_k8IANM=" },
+    { "key" : "Bar", "title": "Bar", "imageUri": "https://media.istockphoto.com/photos/woman-receiving-delivery-at-home-picture-id1370737382?b=1&k=20&m=1370737382&s=170667a&w=0&h=6hkUSWld9uJgZ2E5_WcCdnQfB3c3NO01SG5gg69kGqE=" },
+    { "key" : "Pub Bar", "title": "Pub Bar", "imageUri": "https://media.istockphoto.com/photos/deseeding-of-cherries-in-chia-pudding-factory-by-workers-picture-id1359339837?b=1&k=20&m=1359339837&s=170667a&w=0&h=Tg6-ZC9JeHMHpdwp6dduVQL7QdMnsVC0hQt8mGLpNbs=" },
+    { "key" : "Alitas", "title": "Alitas", "imageUri": "https://media.istockphoto.com/photos/classic-thai-food-dishes-picture-id1312283557?b=1&k=20&m=1312283557&s=170667a&w=0&h=hXAmitFiH9z0mK3GZdMDbkkcSl8Em84LIIlkHnVhpPE=" },
+    { "key" : "Salon de Te", "title": "Salon de Te", "imageUri": "https://media.istockphoto.com/photos/buying-convenient-food-picture-id1371981344?b=1&k=20&m=1371981344&s=170667a&w=0&h=z37vNKdVPeTrgRcf-4uN-pgQKaL4orPObrE9rqzobdc=" },
+    { "key" : "Restaurante", "title": "Restaurante", "imageUri": "https://media.istockphoto.com/photos/high-angle-view-close-up-asian-woman-using-meal-delivery-service-picture-id1324465031?b=1&k=20&m=1324465031&s=170667a&w=0&h=kYSfoZUvAxYM4pLQOCJEkIm4KkCbnYNgxF_8_eJAXps=" },
+    { "key" : "Restaurant Bar", "title": "Restaurant Bar", "imageUri": "https://media.istockphoto.com/photos/best-sources-of-probiotic-on-gray-background-picture-id1359074648?b=1&k=20&m=1359074648&s=170667a&w=0&h=2Khf_2ENhjuJN2UAzoibe98LRZHhTwN5z_Fl4bPk-as=" },
+    { "key": "Cortes", "title": "Cortes", "imageUri": "https://media.istockphoto.com/photos/foods-high-in-vitamin-c-picture-id1270726834?b=1&k=20&m=1270726834&s=170667a&w=0&h=fpNfD2-9lAMsylM5F7tSqT6I_OrHCpYY0s2fuMQiNCU=" },
+    { "key": "Taqueria", "title": "Taqueria", "imageUri": "https://media.istockphoto.com/photos/top-view-of-tomato-salad-arugula-avocado-lemon-in-white-plate-on-pink-picture-id1330176470?b=1&k=20&m=1330176470&s=170667a&w=0&h=TDR95gvP5XpKQgtxTQEjSGilpV_QVLxcc_H_WlO2YhQ=" },
+    { "key": "Club Nocturno", "title": "Club Nocturno", "imageUri": "https://media.istockphoto.com/photos/paper-shopping-food-bag-with-grocery-and-vegetables-picture-id1352758440?b=1&k=20&m=1352758440&s=170667a&w=0&h=DvN7f83yDYg1rrIvN0AGum3Z7DjIspfs3SV1ywaHzDA=" },
+    { "key": "Donas", "title": "Donas", "imageUri": "https://media.istockphoto.com/photos/seamless-food-background-made-of-opened-canned-food-picture-id1348369752?b=1&k=20&m=1348369752&s=170667a&w=0&h=qO0uQSCqPhqOpXumVH-mfulVvITddkgY4AzsGEk5zlM=" },
+    { "key": "Brunch", "title": "Brunch", "imageUri": "https://media.istockphoto.com/photos/variety-of-vegan-plant-based-protein-food-picture-id1369489882?b=1&k=20&m=1369489882&s=170667a&w=0&h=HLYLQw-QyofjXxB1g6hbmqPIa4rXurYWHF2C-KGR_N0=" },
+    { "key": "Pizza", "title": "Pizza", "imageUri": "https://media.istockphoto.com/photos/falling-watermelon-isolated-on-white-background-clipping-path-full-picture-id1352320874?b=1&k=20&m=1352320874&s=170667a&w=0&h=v7BvQoZBu9hW8Tm-fWNihZJT733yX-dfitF36bq4ajM=" },
+    { "key": "Japones", "title": "Japones", "imageUri": "https://media.istockphoto.com/photos/deseeding-of-cherries-in-chia-pudding-factory-by-workers-picture-id1359339837?b=1&k=20&m=1359339837&s=170667a&w=0&h=Tg6-ZC9JeHMHpdwp6dduVQL7QdMnsVC0hQt8mGLpNbs=" }
   ],
   "filters": ["Fumar", "Terraza", "Cerveza", "Vegano", "Petfriendly", "Tarjeta", "Parallevar", "LGBTQ+", "Romantico", "Informal", "Bar", "Alcohol", "Cocteleria", "Deportes", "Vino", "Grupos", "Musicaenvivo", "Accesosilladeruedas", "Te", "Cafe", "Postres", "Costeleria", "SoloEfectivo", "Domicilio", "Formal", "Menuparaniños", "Cena", "Grupo", "Comida", "Catering", "Cocteles", "Saludable"]
 }
