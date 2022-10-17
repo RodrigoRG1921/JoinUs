@@ -1,41 +1,36 @@
 import React from 'react'
-import {ScrollView, ScrollViewComponent, View} from 'react-native'
+import {ScrollView, StyleSheet, View} from 'react-native'
 import RestaurantCard from '../components/RestaurantCard'
 import SearchComponent from '../components/SearchComponent'
 import restaurantsJSON from '../data/restaurants.json'
 
 interface Restaurant {
-  Nombre: string
-  Dirección: string
-  Imagen: string
-  Calificación: string
-  Horario: string
-  'Rango Precios': string
-  coordenadas?: string
-  listaTags?: string
-  Categoría: string
+  name: string
+  address: string
+  imageUri: string
+  rating: string
+  schedule: string
+  priceRange: string
+  coords: string
+  tags: string
+  category: string
 }
 
 const SearchScreen = () => {
   const restaurants: Restaurant[] = restaurantsJSON
   return (
-    <View
-      style={{
-        flex: 1,
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-      }}>
+    <View style={styles.container}>
       <SearchComponent />
-      <ScrollView style={{flex: 1, width: '100%'}}>
+      <ScrollView style={styles.scrollView}>
         {restaurants.map(restaurant => (
           <RestaurantCard
-            key={restaurant.coordenadas}
-            name={restaurant.Nombre}
-            address={restaurant.Dirección}
-            cost={restaurant['Rango Precios']}
-            rating={Math.round(parseFloat(restaurant.Calificación))}
-            image={restaurant.Imagen}
-            schedule={restaurant.Horario}
+            key={restaurant.coords}
+            name={restaurant.name}
+            address={restaurant.address}
+            cost={restaurant.priceRange}
+            rating={Math.round(parseFloat(restaurant.rating))}
+            image={restaurant.imageUri}
+            schedule={restaurant.schedule}
           />
         ))}
       </ScrollView>
@@ -44,3 +39,11 @@ const SearchScreen = () => {
 }
 
 export default SearchScreen
+
+const styles = StyleSheet.create({
+  scrollView: {flex: 1, width: '100%', alignItems: 'center'},
+  container: {
+    flex: 1,
+    alignItems: 'center',
+  },
+})
