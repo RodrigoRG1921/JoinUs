@@ -1,0 +1,1 @@
+export { useCategoriesHook } from './useCategoriesHook'

@@ -1,6 +1,6 @@
 import React from 'react'
-import {Text, View, Image, StyleSheet} from 'react-native'
-import {Surface, Stack} from '@react-native-material/core'
+import {Text, View, Image, StyleSheet, TouchableOpacity} from 'react-native'
+import {Surface} from '@react-native-material/core'
 
 interface Props {
   name: string
@@ -21,7 +21,7 @@ const RestaurantCard = ({
 }: Props) => {
   console.log(image)
   return (
-    <Stack items="center" style={{margin: 10}}>
+    <TouchableOpacity>
       <Surface elevation={7} category="medium" style={styles.card}>
         <Text style={styles.title}>{name}</Text>
         <View style={{flexDirection: 'row', flex: 1}}>
@@ -36,7 +36,7 @@ const RestaurantCard = ({
           </View>
         </View>
       </Surface>
-    </Stack>
+    </TouchableOpacity>
   )
 }
 
