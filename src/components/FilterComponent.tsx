@@ -5,9 +5,12 @@ import {Divider} from '@react-native-material/core'
 import json from '../data/categories-filters.json'
 import ScrollViewContainer from './ScrollViewContainer'
 
-const FilterComponent = () => {
+interface Props {
+  onCheckboxPress: (isChecked: boolean, filter: string) => void
+}
+const FilterComponent = ({onCheckboxPress}: Props) => {
   const filters: string[] = json.filters
-  console.log(filters)
+
   return (
     <ScrollViewContainer>
       {filters.map(filter => (
@@ -25,6 +28,7 @@ const FilterComponent = () => {
             iconStyle={{borderColor: 'black'}}
             innerIconStyle={{borderColor: 'black'}}
             fillColor="gray"
+            onPress={(isChecked: boolean) => onCheckboxPress(isChecked, filter)}
           />
         </View>
       ))}

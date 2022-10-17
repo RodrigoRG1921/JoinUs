@@ -22,7 +22,7 @@ const SearchScreen = () => {
   const [filter, setFilter] = useState(false)
   const restaurants: Restaurant[] = restaurantsJSON
   const [currentRestaurants, setCurrentRestaurants] = useState(restaurants)
-
+  const [currentFilters, setCurrentFilters] = useState<string[]>([])
   const onChangeText = (text: string) => {
     if (text === '') {
       setCurrentRestaurants(restaurantsJSON)
@@ -35,10 +35,35 @@ const SearchScreen = () => {
       setCurrentRestaurants(restaurantes)
     }
   }
+  const onCheckboxPress = (isChecked: boolean, filter: string) => {
+    if (isChecked) {
+      setCurrentFilters(prevFilters => [...prevFilters, filter])
+    } else {
+      setCurrentFilters(
+        currentFilters.filter(currentFilter => currentFilter !== filter),
+      )
+    }
+    console.log(currentFilters)
+  }
+
+  const onFilterPress = () => {
+    setFilter(!filter)
+    if (currentFilters.length > 0) {
+      const selectedRestaurants = currentRestaurants.filter(restaurant => {
+        return restaurant.tags.split(', ').some(tag => {
+          return currentFilters.includes(tag)
+        })
+      })
+      setCurrentRestaurants(selectedRestaurants)
+      setCurrentFilters([])
+    } else {
+      setCurrentRestaurants(restaurantsJSON)
+    }
+  }
   return (
     <View style={styles.container}>
       <SearchComponent
-        onFilterPress={() => setFilter(!filter)}
+        onFilterPress={onFilterPress}
         onChangeText={onChangeText}
       />
       {!filter ? (
@@ -58,7 +83,7 @@ const SearchScreen = () => {
           </View>
         </ScrollViewContainer>
       ) : (
-        <FilterComponent />
+        <FilterComponent onCheckboxPress={onCheckboxPress} />
       )}
     </View>
   )
