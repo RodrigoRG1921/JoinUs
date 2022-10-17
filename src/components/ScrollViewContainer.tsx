@@ -13,8 +13,6 @@ export default ScrollViewContainer
 
 const styles = StyleSheet.create({
   scrollView: {
-    margin: 16,
-    flexGrow: 1,
-    marginBottom: 100,
+    marginHorizontal: 16,
   },
 })
