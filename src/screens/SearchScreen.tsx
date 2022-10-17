@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {FlatList, Text} from 'react-native'
-import FilterComponent from '../components/FilterComponent'
+import FilterComponent from '../components/Filter/FilterComponent'
 import RestaurantCard from '../components/RestaurantCard'
 import SearchComponent from '../components/SearchComponent'
 import restaurantsJSON from '../data/restaurants.json'
@@ -99,7 +99,10 @@ const SearchScreen = () => {
           )}
         />
       ) : filter ? (
-        <FilterComponent onCheckboxPress={onCheckboxPress} />
+        <FilterComponent
+          onCheckboxPress={onCheckboxPress}
+          onPress={onFilterPress}
+        />
       ) : (
         <Text>No restaurants with this characteristics </Text>
       )}
