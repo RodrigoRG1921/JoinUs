@@ -47,32 +47,34 @@ const styles = StyleSheet.create({
   },
   card: {
     width: '80%',
-    height: 150,
     alignItems: 'center',
+    padding: 5,
   },
   cardSection: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    // padding: 10,
   },
   title: {
     fontSize: 20,
     color: 'black',
+    fontWeight: 'bold',
   },
   address: {
     color: 'black',
-    fontSize: 15,
+    fontSize: 12,
   },
   stars: {
     color: 'black',
-    fontSize: 20,
+    fontSize: 30,
+    fontWeight: 'bold',
   },
   cost: {
-    color: 'green',
+    color: 'black',
     fontSize: 20,
+    fontWeight: 'bold',
   },
-  image: {width: '80%', height: 90, borderRadius: 20},
+  image: {width: '80%', height: 90, borderRadius: 10},
   schedule: {
     color: 'black',
   },
