@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
-import {StyleSheet, View} from 'react-native'
+import {FlatList, Text} from 'react-native'
 import FilterComponent from '../components/FilterComponent'
 import RestaurantCard from '../components/RestaurantCard'
 import SearchComponent from '../components/SearchComponent'
 import restaurantsJSON from '../data/restaurants.json'
-import ScrollViewContainer from '../components/ScrollViewContainer'
+import ViewContainer from '../components/ViewContainer'
 
 interface Restaurant {
   name: string
@@ -23,7 +23,10 @@ const SearchScreen = () => {
   const restaurants: Restaurant[] = restaurantsJSON
   const [currentRestaurants, setCurrentRestaurants] = useState(restaurants)
   const [currentFilters, setCurrentFilters] = useState<string[]>([])
+  const [currentText, setCurrentText] = useState('')
+
   const onChangeText = (text: string) => {
+    setCurrentText(text)
     if (text === '') {
       setCurrentRestaurants(restaurantsJSON)
     } else {
@@ -43,7 +46,6 @@ const SearchScreen = () => {
         currentFilters.filter(currentFilter => currentFilter !== filter),
       )
     }
-    console.log(currentFilters)
   }
 
   const onFilterPress = () => {
@@ -60,43 +62,49 @@ const SearchScreen = () => {
       setCurrentRestaurants(restaurantsJSON)
     }
   }
+
+  const onSubmitText = () => {
+    setCurrentText('')
+  }
+
+  const onPressIn = () => {
+    console.log('etoo', currentRestaurants.length)
+    if (currentRestaurants.length === 0) {
+      setCurrentRestaurants(restaurantsJSON)
+    }
+  }
   return (
-    <View style={styles.container}>
+    <ViewContainer>
       <SearchComponent
         onFilterPress={onFilterPress}
         onChangeText={onChangeText}
+        onSubmitText={onSubmitText}
+        currentText={currentText}
+        onPressIn={onPressIn}
       />
-      {!filter ? (
-        <ScrollViewContainer>
-          <View style={styles.cardContainer}>
-            {currentRestaurants.map(restaurant => (
-              <RestaurantCard
-                key={restaurant.coords}
-                name={restaurant.name}
-                address={restaurant.address}
-                cost={restaurant.priceRange}
-                rating={Math.round(parseFloat(restaurant.rating))}
-                image={restaurant.imageUri}
-                schedule={restaurant.schedule}
-              />
-            ))}
-          </View>
-        </ScrollViewContainer>
-      ) : (
+      {!filter && currentRestaurants.length > 0 ? (
+        <FlatList
+          keyExtractor={item => item.coords}
+          numColumns={1}
+          data={currentRestaurants}
+          renderItem={({item}) => (
+            <RestaurantCard
+              name={item.name}
+              address={item.address}
+              cost={item.priceRange}
+              rating={Math.round(parseFloat(item.rating))}
+              image={item.imageUri}
+              schedule={item.schedule}
+            />
+          )}
+        />
+      ) : filter ? (
         <FilterComponent onCheckboxPress={onCheckboxPress} />
+      ) : (
+        <Text>No restaurants with this characteristics </Text>
       )}
-    </View>
+    </ViewContainer>
   )
 }
 
 export default SearchScreen
-
-const styles = StyleSheet.create({
-  scrollView: {flex: 1, width: '100%'},
-  container: {
-    flex: 1,
-  },
-  cardContainer: {
-    alignItems: 'center',
-  },
-})
