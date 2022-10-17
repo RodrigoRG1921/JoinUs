@@ -10,7 +10,7 @@ interface Props {
 
 const SearchComponent = ({onFilterPress, onChangeText}: Props) => {
   return (
-    <View style={{flexDirection: 'row'}}>
+    <View style={styles.container}>
       <TextInput
         onChangeText={text => onChangeText(text)}
         variant="outlined"
@@ -26,7 +26,7 @@ const SearchComponent = ({onFilterPress, onChangeText}: Props) => {
         )}
       />
       <TouchableOpacity onPress={onFilterPress}>
-        <Surface style={styles.iconContainer} elevation={4}>
+        <Surface style={styles.iconContainer} elevation={8}>
           <Icon name="filter-alt" size={50} color="black" />
         </Surface>
       </TouchableOpacity>
@@ -37,6 +37,9 @@ const SearchComponent = ({onFilterPress, onChangeText}: Props) => {
 export default SearchComponent
 
 const styles = StyleSheet.create({
-  iconContainer: {width: 55, height: 55, margin: 10, alignItems: 'center'},
-  text: {margin: 10, width: '75%'},
+  iconContainer: {width: 55, height: 55, marginLeft: 5},
+  text: {flex: 1},
+  container: {
+    flexDirection: 'row',
+  },
 })
