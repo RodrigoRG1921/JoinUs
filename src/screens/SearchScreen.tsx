@@ -51,11 +51,11 @@ const SearchScreen = () => {
   const onFilterPress = () => {
     setFilter(!filter)
     if (currentFilters.length > 0) {
-      const selectedRestaurants = currentRestaurants.filter(restaurant => {
-        return currentFilters.every(filter => {
-          return restaurant.tags.split(', ').includes(filter)
-        })
-      })
+      const selectedRestaurants = currentRestaurants.filter(restaurant =>
+        currentFilters.every(filter =>
+          restaurant.tags.split(', ').includes(filter),
+        ),
+      )
       setCurrentRestaurants(selectedRestaurants)
       setCurrentFilters([])
     } else {
@@ -68,7 +68,6 @@ const SearchScreen = () => {
   }
 
   const onPressIn = () => {
-    console.log('etoo', currentRestaurants.length)
     if (currentRestaurants.length === 0) {
       setCurrentRestaurants(restaurantsJSON)
     }
