@@ -22,17 +22,19 @@ const SearchScreen = () => {
     <View style={styles.container}>
       <SearchComponent />
       <ScrollView style={styles.scrollView}>
-        {restaurants.map(restaurant => (
-          <RestaurantCard
-            key={restaurant.coords}
-            name={restaurant.name}
-            address={restaurant.address}
-            cost={restaurant.priceRange}
-            rating={Math.round(parseFloat(restaurant.rating))}
-            image={restaurant.imageUri}
-            schedule={restaurant.schedule}
-          />
-        ))}
+        <View style={styles.cardContainer}>
+          {restaurants.map(restaurant => (
+            <RestaurantCard
+              key={restaurant.coords}
+              name={restaurant.name}
+              address={restaurant.address}
+              cost={restaurant.priceRange}
+              rating={Math.round(parseFloat(restaurant.rating))}
+              image={restaurant.imageUri}
+              schedule={restaurant.schedule}
+            />
+          ))}
+        </View>
       </ScrollView>
     </View>
   )
@@ -41,9 +43,12 @@ const SearchScreen = () => {
 export default SearchScreen
 
 const styles = StyleSheet.create({
-  scrollView: {flex: 1, width: '100%', alignItems: 'center'},
+  scrollView: {flex: 1, width: '100%'},
   container: {
     flex: 1,
+    alignItems: 'center',
+  },
+  cardContainer: {
     alignItems: 'center',
   },
 })
