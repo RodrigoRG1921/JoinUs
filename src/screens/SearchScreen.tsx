@@ -50,8 +50,8 @@ const SearchScreen = () => {
     setFilter(!filter)
     if (currentFilters.length > 0) {
       const selectedRestaurants = currentRestaurants.filter(restaurant => {
-        return restaurant.tags.split(', ').some(tag => {
-          return currentFilters.includes(tag)
+        return currentFilters.every(filter => {
+          return restaurant.tags.split(', ').includes(filter)
         })
       })
       setCurrentRestaurants(selectedRestaurants)
