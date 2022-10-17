@@ -3,7 +3,11 @@ import {View, TouchableOpacity, StyleSheet} from 'react-native'
 import {TextInput, IconButton, Surface} from '@react-native-material/core'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
-const SearchComponent = () => {
+interface Props {
+  onFilterPress: () => void
+}
+
+const SearchComponent = ({onFilterPress}: Props) => {
   return (
     <View style={{flexDirection: 'row'}}>
       <TextInput
@@ -19,7 +23,7 @@ const SearchComponent = () => {
           />
         )}
       />
-      <TouchableOpacity>
+      <TouchableOpacity onPress={onFilterPress}>
         <Surface style={styles.iconContainer} elevation={4}>
           <Icon name="filter-alt" size={50} color="black" />
         </Surface>

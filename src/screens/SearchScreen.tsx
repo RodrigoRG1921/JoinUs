@@ -1,8 +1,10 @@
-import React from 'react'
-import {ScrollView, StyleSheet, View} from 'react-native'
+import React, {useState} from 'react'
+import {StyleSheet, View} from 'react-native'
+import FilterComponent from '../components/FilterComponent'
 import RestaurantCard from '../components/RestaurantCard'
 import SearchComponent from '../components/SearchComponent'
 import restaurantsJSON from '../data/restaurants.json'
+import ScrollViewContainer from '../components/ScrollViewContainer'
 
 interface Restaurant {
   name: string
@@ -17,25 +19,31 @@ interface Restaurant {
 }
 
 const SearchScreen = () => {
+  const [filter, setFilter] = useState(false)
   const restaurants: Restaurant[] = restaurantsJSON
+
   return (
     <View style={styles.container}>
-      <SearchComponent />
-      <ScrollView style={styles.scrollView}>
-        <View style={styles.cardContainer}>
-          {restaurants.map(restaurant => (
-            <RestaurantCard
-              key={restaurant.coords}
-              name={restaurant.name}
-              address={restaurant.address}
-              cost={restaurant.priceRange}
-              rating={Math.round(parseFloat(restaurant.rating))}
-              image={restaurant.imageUri}
-              schedule={restaurant.schedule}
-            />
-          ))}
-        </View>
-      </ScrollView>
+      <SearchComponent onFilterPress={() => setFilter(!filter)} />
+      {!filter ? (
+        <ScrollViewContainer>
+          <View style={styles.cardContainer}>
+            {restaurants.map(restaurant => (
+              <RestaurantCard
+                key={restaurant.coords}
+                name={restaurant.name}
+                address={restaurant.address}
+                cost={restaurant.priceRange}
+                rating={Math.round(parseFloat(restaurant.rating))}
+                image={restaurant.imageUri}
+                schedule={restaurant.schedule}
+              />
+            ))}
+          </View>
+        </ScrollViewContainer>
+      ) : (
+        <FilterComponent />
+      )}
     </View>
   )
 }
@@ -46,7 +54,6 @@ const styles = StyleSheet.create({
   scrollView: {flex: 1, width: '100%'},
   container: {
     flex: 1,
-    alignItems: 'center',
   },
   cardContainer: {
     alignItems: 'center',
