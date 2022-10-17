@@ -19,9 +19,8 @@ const RestaurantCard = ({
   rating,
   cost,
 }: Props) => {
-  console.log(image)
   return (
-    <TouchableOpacity>
+    <TouchableOpacity style={styles.button}>
       <Surface elevation={7} category="medium" style={styles.card}>
         <Text style={styles.title}>{name}</Text>
         <View style={{flexDirection: 'row', flex: 1}}>
@@ -43,6 +42,9 @@ const RestaurantCard = ({
 export default RestaurantCard
 
 const styles = StyleSheet.create({
+  button: {
+    margin: 8,
+  },
   card: {
     width: '80%',
     height: 150,
