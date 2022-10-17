@@ -21,14 +21,30 @@ interface Restaurant {
 const SearchScreen = () => {
   const [filter, setFilter] = useState(false)
   const restaurants: Restaurant[] = restaurantsJSON
+  const [currentRestaurants, setCurrentRestaurants] = useState(restaurants)
 
+  const onChangeText = (text: string) => {
+    if (text === '') {
+      setCurrentRestaurants(restaurantsJSON)
+    } else {
+      const restaurantes = currentRestaurants.filter(restaurant => {
+        const name = restaurant.name.toLowerCase()
+        text = text.toLowerCase()
+        return name.includes(text)
+      })
+      setCurrentRestaurants(restaurantes)
+    }
+  }
   return (
     <View style={styles.container}>
-      <SearchComponent onFilterPress={() => setFilter(!filter)} />
+      <SearchComponent
+        onFilterPress={() => setFilter(!filter)}
+        onChangeText={onChangeText}
+      />
       {!filter ? (
         <ScrollViewContainer>
           <View style={styles.cardContainer}>
-            {restaurants.map(restaurant => (
+            {currentRestaurants.map(restaurant => (
               <RestaurantCard
                 key={restaurant.coords}
                 name={restaurant.name}

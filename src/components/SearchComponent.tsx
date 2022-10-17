@@ -5,12 +5,14 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 
 interface Props {
   onFilterPress: () => void
+  onChangeText: (text: string) => void
 }
 
-const SearchComponent = ({onFilterPress}: Props) => {
+const SearchComponent = ({onFilterPress, onChangeText}: Props) => {
   return (
     <View style={{flexDirection: 'row'}}>
       <TextInput
+        onChangeText={text => onChangeText(text)}
         variant="outlined"
         label="Search"
         style={styles.text}
