@@ -8,7 +8,7 @@ interface Props {
   schedule: string
   address: string
   rating: number
-  cost: number
+  cost: string
 }
 
 const RestaurantCard = ({
@@ -20,7 +20,7 @@ const RestaurantCard = ({
   cost,
 }: Props) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity style={styles.button}>
       <Surface elevation={7} category="medium" style={styles.card}>
         <Text style={styles.title}>{name}</Text>
         <View style={{flexDirection: 'row', flex: 1}}>
@@ -31,7 +31,7 @@ const RestaurantCard = ({
           <View style={styles.cardSection}>
             <Text style={styles.address}>{address}</Text>
             <Text style={styles.stars}>{'*'.repeat(rating)}</Text>
-            <Text style={styles.cost}>{'$'.repeat(cost)}</Text>
+            <Text style={styles.cost}>{cost}</Text>
           </View>
         </View>
       </Surface>
@@ -42,34 +42,39 @@ const RestaurantCard = ({
 export default RestaurantCard
 
 const styles = StyleSheet.create({
+  button: {
+    marginVertical: 8,
+  },
   card: {
-    width: '80%',
-    height: 150,
+    width: '100%',
     alignItems: 'center',
+    padding: 5,
   },
   cardSection: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    // padding: 10,
   },
   title: {
     fontSize: 20,
     color: 'black',
+    fontWeight: 'bold',
   },
   address: {
     color: 'black',
-    fontSize: 15,
+    fontSize: 16,
   },
   stars: {
     color: 'black',
-    fontSize: 20,
+    fontSize: 30,
+    fontWeight: 'bold',
   },
   cost: {
-    color: 'green',
+    color: 'black',
     fontSize: 20,
+    fontWeight: 'bold',
   },
-  image: {width: '80%', height: 90, borderRadius: 20},
+  image: {width: '80%', height: 90, borderRadius: 10},
   schedule: {
     color: 'black',
   },

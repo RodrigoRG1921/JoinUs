@@ -3,11 +3,29 @@ import {View, TouchableOpacity, StyleSheet} from 'react-native'
 import {TextInput, IconButton, Surface} from '@react-native-material/core'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
-const SearchComponent = () => {
+interface Props {
+  onFilterPress: () => void
+  onChangeText: (text: string) => void
+  onSubmitText: () => void
+  currentText: string
+  onPressIn: () => void
+}
+
+const SearchComponent = ({
+  onFilterPress,
+  onChangeText,
+  onSubmitText,
+  currentText,
+  onPressIn,
+}: Props) => {
   return (
-    <View style={{flexDirection: 'row'}}>
+    <View style={styles.container}>
       <TextInput
+        onChangeText={text => onChangeText(text)}
+        onSubmitEditing={onSubmitText}
+        onPressIn={onPressIn}
         variant="outlined"
+        value={currentText}
         label="Search"
         style={styles.text}
         trailing={props => (
@@ -19,8 +37,8 @@ const SearchComponent = () => {
           />
         )}
       />
-      <TouchableOpacity>
-        <Surface style={styles.iconContainer} elevation={4}>
+      <TouchableOpacity onPress={onFilterPress}>
+        <Surface style={styles.iconContainer} elevation={8}>
           <Icon name="filter-alt" size={50} color="black" />
         </Surface>
       </TouchableOpacity>
@@ -31,6 +49,9 @@ const SearchComponent = () => {
 export default SearchComponent
 
 const styles = StyleSheet.create({
-  iconContainer: {width: 55, height: 55, margin: 10, alignItems: 'center'},
-  text: {margin: 10, width: '75%'},
+  iconContainer: {width: 55, height: 55, marginLeft: 5},
+  text: {flex: 1},
+  container: {
+    flexDirection: 'row',
+  },
 })

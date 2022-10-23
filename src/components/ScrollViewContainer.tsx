@@ -1,12 +1,18 @@
 import React from 'react'
-import {SafeAreaView, ScrollView} from 'react-native'
+import {SafeAreaView, ScrollView, StyleSheet} from 'react-native'
 
 const ScrollViewContainer = ({children}: any) => {
   return (
     <SafeAreaView>
-      <ScrollView style={{margin: 16}}>{children}</ScrollView>
+      <ScrollView style={styles.scrollView}>{children}</ScrollView>
     </SafeAreaView>
   )
 }
 
 export default ScrollViewContainer
+
+const styles = StyleSheet.create({
+  scrollView: {
+    marginHorizontal: 16,
+  },
+})
