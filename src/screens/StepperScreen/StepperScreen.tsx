@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View } from 'react-native'
 import StepIndicator from 'react-native-step-indicator-v2'
 
@@ -6,9 +6,10 @@ import { stepperStyles, styles } from './StepperScreen.styles'
 
 import CategoryView from '../../containers/CategoryView'
 import PreferencesView from '../../containers/PreferencesView'
+import ResultsView from '../../containers/ResultsView'
 import ButtonBase from '../../components/Button'
 
-import { useCategoriesHook, usePreferencesHook } from '../../hooks'
+import { useCategoriesHook, usePreferencesHook, useResultsHook, useRestaurantsHook } from '../../hooks'
 
 interface IProps {
   labels?: Array<string>
@@ -16,17 +17,51 @@ interface IProps {
 
 const defaultLabels = ['Categoría', 'Preferencias', 'Resultados']
 
+const buttonTextMap = [
+  'Siguiente',
+  'Siguiente',
+  'Finalizar',
+]
+
 const StepperScreen = ({
   labels = defaultLabels
 }: IProps) => {
   const [stepperPositionIndex, setStepperPositionIndex] = useState<number>(0)
-  const { categories } = useCategoriesHook()
-  const { preferences } = usePreferencesHook()
+
+  const { categories, selectedCategory, setSelectedCategory } = useCategoriesHook()
+  const { preferences, preferencesSelected, preferencesSelectedMap, setPreferencesSelectedMap, setPreferencesSelected } = usePreferencesHook()
+  const { restaurants } = useRestaurantsHook()
+  const { results } = useResultsHook({
+    category: selectedCategory, preferences: preferencesSelected, restaurants
+  })
+
+  useEffect(() => {
+    if (!stepperPositionIndex) {
+      setPreferencesSelected([])
+      setSelectedCategory('')
+    }
+  }, [stepperPositionIndex])
+
+  const handleOnChipClick = (key: string) => {
+    const chipsSelectedMapCopy = { ...preferencesSelectedMap }
+    chipsSelectedMapCopy[key] = !chipsSelectedMapCopy[key]
+    setPreferencesSelectedMap(chipsSelectedMapCopy)
+  }
+
+  const handleCategoryPress = (category: string) => {
+    setSelectedCategory(category)
+    setStepperPositionIndex(stepperPositionIndex+1)
+  }
 
   const renderViewByPositionIndex = (positionIndex: number) => {
     const views = [
-      <CategoryView key='categoryView' categories={categories} />,
-      <PreferencesView key='preferencesView' preferences={preferences}/>
+      <CategoryView key='categoryView' categories={categories} handleCategoryCardOnPress={handleCategoryPress} />,
+      <PreferencesView
+        key='preferencesView'
+        preferences={preferences}
+        handleOnChipClick={handleOnChipClick}
+        preferencesSelectedMap={preferencesSelectedMap}/>,
+      <ResultsView key='resultView' results={results}/>
     ]
     return views[positionIndex]
   }
@@ -52,9 +87,11 @@ const StepperScreen = ({
           ) }
         </View>
         <View>
-          <ButtonBase
-            title={stepperPositionIndex === 3 ? 'Finalizar' : 'Siguiente'}
-            onPress={() => setStepperPositionIndex(stepperPositionIndex+1)} />
+          { stepperPositionIndex !== 2 && (
+            <ButtonBase
+              title={buttonTextMap[stepperPositionIndex]}
+              onPress={() => setStepperPositionIndex(stepperPositionIndex+1)} />
+          ) }
         </View>
       </View>
     </View>

@@ -17,7 +17,9 @@ const CategoryCard = ({
   ...props
 }: IProps & ICategory & SurfaceProps) => (
   <View style={styles.container}>
-    <TouchableOpacity onPress={() => onPress?.(title)} style={styles.card}>
+    <TouchableOpacity
+      onPress={() => onPress?.(title)}
+      style={styles.card}>
       <Surface elevation={elevation} {...props} style={styles.surface}>
         <Image source={{ uri: imageUri }} style={styles.image} resizeMode='cover' />
         <View style={styles.textContainer}>

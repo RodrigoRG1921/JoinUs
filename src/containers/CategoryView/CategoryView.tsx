@@ -26,7 +26,6 @@ const CategoryView = ({
         renderItem={({ item }) => (
           <CategoryCard
             { ...item }
-            key={item.key}
             imageUri={item.imageUri}
             onPress={handleCategoryCardOnPress} />
         )}/>

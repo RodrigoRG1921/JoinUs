@@ -9,7 +9,20 @@ interface IPreference {
   key: string;
 }
 
+interface IRestaurant {
+  name: string
+  address: string
+  imageUri: string
+  rating: string
+  schedule: string
+  priceRange: string
+  coords: string
+  tags: string
+  category: string
+}
+
 export type {
   ICategory,
-  IPreference
+  IPreference,
+  IRestaurant
 }

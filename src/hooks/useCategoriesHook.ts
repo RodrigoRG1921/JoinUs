@@ -6,13 +6,16 @@ import categoriesJson from '../data/categories-filters.json'
 
 const useCategoriesHook = () => {
   const [categories, setCategories] = useState<Array<ICategory>>([])
+  const [selectedCategory, setSelectedCategory] = useState<string>('')
 
   useEffect(() => {
     setCategories(categoriesJson.categories)
   }, [])
 
   return {
-    categories
+    categories,
+    setSelectedCategory,
+    selectedCategory
   }
 }
 

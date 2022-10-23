@@ -6,23 +6,17 @@ import { styles } from './PreferencesView.styles'
 
 import { IPreference } from '../../constants'
 
-import { usePreferencesHook } from '../../hooks'
-
 interface IProps {
   preferences: Array<IPreference>;
+  handleOnChipClick: (value: string) => void;
+  preferencesSelectedMap: {[key: string]: boolean};
 }
 
 const PreferencesView = ({
   preferences,
+  handleOnChipClick,
+  preferencesSelectedMap
 }: IProps) => {
-  const { preferencesSelectedMap, setPreferencesSelectedMap } = usePreferencesHook()
-
-  const handleOnChipClick = (key: string) => {
-    const chipsSelectedMapCopy = { ...preferencesSelectedMap }
-    chipsSelectedMapCopy[key] = !chipsSelectedMapCopy[key]
-    setPreferencesSelectedMap(chipsSelectedMapCopy)
-  }
-
   return (
     <ScrollView style={styles.container}>
       <View style={styles.chipsContainer}>
