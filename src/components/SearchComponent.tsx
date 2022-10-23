@@ -9,7 +9,7 @@ const SearchComponent = () => {
       <TextInput
         variant="outlined"
         label="Search"
-        style={{margin: 10, width: '75%'}}
+        style={styles.text}
         trailing={props => (
           <IconButton
             icon={props => (
@@ -20,9 +20,7 @@ const SearchComponent = () => {
         )}
       />
       <TouchableOpacity>
-        <Surface
-          style={{width: 55, height: 55, margin: 10, alignItems: 'center'}}
-          elevation={4}>
+        <Surface style={styles.iconContainer} elevation={4}>
           <Icon name="filter-alt" size={50} color="black" />
         </Surface>
       </TouchableOpacity>
@@ -31,3 +29,8 @@ const SearchComponent = () => {
 }
 
 export default SearchComponent
+
+const styles = StyleSheet.create({
+  iconContainer: {width: 55, height: 55, margin: 10, alignItems: 'center'},
+  text: {margin: 10, width: '75%'},
+})
