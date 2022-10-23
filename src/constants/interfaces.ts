@@ -4,6 +4,12 @@ interface ICategory {
   key: string;
 }
 
+interface IPreference {
+  title: string;
+  key: string;
+}
+
 export type {
-  ICategory
+  ICategory,
+  IPreference
 }

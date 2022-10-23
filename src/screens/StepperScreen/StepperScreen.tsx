@@ -5,9 +5,10 @@ import StepIndicator from 'react-native-step-indicator-v2'
 import { stepperStyles, styles } from './StepperScreen.styles'
 
 import CategoryView from '../../containers/CategoryView'
+import PreferencesView from '../../containers/PreferencesView'
 import ButtonBase from '../../components/Button'
 
-import { useCategoriesHook } from '../../hooks'
+import { useCategoriesHook, usePreferencesHook } from '../../hooks'
 
 interface IProps {
   labels?: Array<string>
@@ -20,11 +21,14 @@ const StepperScreen = ({
 }: IProps) => {
   const [stepperPositionIndex, setStepperPositionIndex] = useState<number>(0)
   const { categories } = useCategoriesHook()
+  const { preferences } = usePreferencesHook()
 
   const renderViewByPositionIndex = (positionIndex: number) => {
-    if (positionIndex === 0) {
-      return <CategoryView categories={categories} />
-    }
+    const views = [
+      <CategoryView key='categoryView' categories={categories} />,
+      <PreferencesView key='preferencesView' preferences={preferences}/>
+    ]
+    return views[positionIndex]
   }
 
   return (

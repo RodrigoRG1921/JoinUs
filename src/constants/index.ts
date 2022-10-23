@@ -1,1 +1,1 @@
-export type { ICategory } from './interfaces'
+export type { ICategory, IPreference } from './interfaces'
