@@ -11,12 +11,16 @@ import RestaurantDetailScreen from '../screens/RestaurantDetailScreen'
 import StepperScreen from '../screens/StepperScreen'
 import SearchScreen from '../screens/SearchScreen'
 import CustomDrawer from '../components/Drawer/CustomDrawer'
+import HeaderComponent from '../components/Header/HeaderComponent'
 
 const Stack = createNativeStackNavigator<RootStackParamList>()
 const Drawer = createDrawerNavigator()
 
 const StepperNavigator = () => (
-  <Stack.Navigator>
+  <Stack.Navigator
+    screenOptions={{
+      headerShown: false,
+    }}>
     <Stack.Screen name="StepperScreen" component={StepperScreen} />
     <Stack.Screen
       name="RestaurantDetailScreen"
@@ -26,7 +30,10 @@ const StepperNavigator = () => (
 )
 
 const SearchNavigator = () => (
-  <Stack.Navigator>
+  <Stack.Navigator
+    screenOptions={{
+      headerShown: false,
+    }}>
     <Stack.Screen name="SearchScreen" component={SearchScreen} />
     <Stack.Screen
       name="RestaurantDetailScreen"
@@ -35,11 +42,11 @@ const SearchNavigator = () => (
   </Stack.Navigator>
 )
 
-const DrawerNavigator = () => (
+const DrawerNavigator = (props: any) => (
   <Drawer.Navigator
     initialRouteName="SearchNavigator"
     screenOptions={{
-      headerShown: false,
+      header: props => <HeaderComponent {...props} />,
     }}
     drawerContent={props => <CustomDrawer {...props} />}>
     <Drawer.Screen name="SearchNavigator" component={SearchNavigator} />
@@ -52,9 +59,7 @@ const Navigator = () => (
     <NavigationContainer>
       <Stack.Navigator
         initialRouteName="SplashScreen"
-        screenOptions={{
-          headerShown: false,
-        }}>
+        screenOptions={{headerShown: false}}>
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
         <Stack.Screen name="DrawerNavigator" component={DrawerNavigator} />
       </Stack.Navigator>
