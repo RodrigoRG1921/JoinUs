@@ -24,8 +24,9 @@ const buttonTextMap = [
 ]
 
 const StepperScreen = ({
-  labels = defaultLabels
-}: IProps) => {
+  labels = defaultLabels,
+  ...props
+}: IProps & any) => {
   const [stepperPositionIndex, setStepperPositionIndex] = useState<number>(0)
 
   const { categories, selectedCategory, setSelectedCategory } = useCategoriesHook()
@@ -53,6 +54,11 @@ const StepperScreen = ({
     setStepperPositionIndex(stepperPositionIndex+1)
   }
 
+  const handleOnRestaurantClick = (restaurant: any) => {
+    
+    props.navigation.navigate('RestaurantDetailScreen', { ...restaurant })
+  }
+
   const renderViewByPositionIndex = (positionIndex: number) => {
     const views = [
       <CategoryView key='categoryView' categories={categories} handleCategoryCardOnPress={handleCategoryPress} />,
@@ -61,7 +67,7 @@ const StepperScreen = ({
         preferences={preferences}
         handleOnChipClick={handleOnChipClick}
         preferencesSelectedMap={preferencesSelectedMap}/>,
-      <ResultsView key='resultView' results={results}/>
+      <ResultsView onPress={handleOnRestaurantClick} key='resultView' results={results}/>
     ]
     return views[positionIndex]
   }

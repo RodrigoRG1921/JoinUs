@@ -1,1 +1,1 @@
-export type { ICategory, IPreference } from './interfaces'
+export type { ICategory, IPreference, IRestaurant } from './interfaces'

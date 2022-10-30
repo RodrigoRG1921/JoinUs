@@ -8,11 +8,13 @@ import { IRestaurant } from '../../constants/interfaces'
 import RestaurantCard from '../../components/RestaurantCard/RestaurantCard'
 
 interface IProps {
-  results: Array<IRestaurant>
+  results: Array<IRestaurant>;
+  onPress?: (resta: IRestaurant) => void;
 }
 
 const ResultsView = ({
-  results
+  results,
+  onPress
 }: IProps) => {
   return (
     <FlatList
@@ -22,7 +24,7 @@ const ResultsView = ({
       data={results}
       renderItem={({ item }) => (
         <View key={item.name} style={styles.cardContainer}>
-          <RestaurantCard { ...item } />
+          <RestaurantCard onPress={(resta) => onPress?.(resta)} { ...item } />
         </View>
       )}/>
   )
