@@ -3,10 +3,12 @@ import { StyleSheet } from 'react-native'
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16
+    padding: 16,
   },
   image: {
-    width: 60, height: 60, borderRadius: 5
+    width: 60,
+    height: 60,
+    borderRadius: 5
   },
   titleContainer: {
     display: 'flex',
@@ -15,9 +17,12 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   title: {
-    flex: 10
+    flex: 8
   },
   imageContainer: {
+    flex: 2
+  },
+  favContainer: {
     flex: 2
   },
   unknownButtons: {
