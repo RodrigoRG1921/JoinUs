@@ -10,7 +10,7 @@ import SplashScreen from '../screens/SplashScreen'
 import RestaurantDetailScreen from '../screens/RestaurantDetailScreen'
 import StepperScreen from '../screens/StepperScreen'
 import SearchScreen from '../screens/SearchScreen'
-import CustomDrawer from '../components/Drawer/CustomDrawer'
+import CustomDrawer from '../containers/Drawer/CustomDrawer'
 
 const Stack = createNativeStackNavigator<RootStackParamList>()
 const Drawer = createDrawerNavigator()
