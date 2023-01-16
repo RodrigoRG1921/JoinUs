@@ -52,7 +52,7 @@ const CustomDrawer = (props: DrawerContentComponentProps) => {
                   label="Favoritos*"
                   style={styles.drawerItem}
                   labelStyle={styles.labelStyle}
-                  onPress={() => setFavorites(true)}
+                  onPress={handleFavoritesPress}
                 />
               </View>
             </View>

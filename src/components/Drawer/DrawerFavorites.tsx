@@ -2,12 +2,9 @@ import {DrawerItem} from '@react-navigation/drawer'
 import React from 'react'
 import {View, Text, TouchableOpacity} from 'react-native'
 import {IRestaurant} from '../../constants'
-import {styles} from './DrawerFavorites.styles'
 import restaurantsJSON from '../../data/restaurants.json'
-
-interface Props {
-  onPress: () => void
-}
+import {styles} from './DrawerFavorites.styles'
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
 const favorites = [
   'Mariscos Tenorio',
@@ -28,7 +25,7 @@ const DrawerFavorites = ({onPress, ...props}: any) => {
     <View>
       <View style={styles.titleBox}>
         <TouchableOpacity onPress={onPress}>
-          <Text style={styles.arrow}>{'<-'}</Text>
+          <Icon name="west" size={25} color="black" />
         </TouchableOpacity>
         <Text style={styles.title}>Favoritos</Text>
       </View>

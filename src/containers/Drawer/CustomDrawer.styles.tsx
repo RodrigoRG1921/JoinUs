@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
   },
   face: {
     margin: 0,
+    paddingBottom: 3,
     padding: 0,
     transform: [{rotate: '90deg'}],
     width: 32,

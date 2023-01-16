@@ -5,11 +5,7 @@ const styles = StyleSheet.create({
     color: 'black',
     fontWeight: 'bold',
     fontSize: 20,
-  },
-  arrow: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginRight: 5,
+    marginLeft: 5,
   },
   labelStyle: {
     color: 'black',
@@ -28,6 +24,7 @@ const styles = StyleSheet.create({
   drawerItem: {
     display: 'flex',
     marginVertical: 0,
+    paddingVertical: 0,
   },
 })
 
