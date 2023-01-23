@@ -8,10 +8,10 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   image: {
-    height: 60,
-    width: 100,
     alignContent: 'center',
     marginRight: 26,
+    width: 50,
+    height: 40,
   },
 })
 

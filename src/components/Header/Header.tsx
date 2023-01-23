@@ -14,9 +14,7 @@ const Header = ({navigation}: any) => {
       </TouchableOpacity>
       <Image
         style={styles.image}
-        source={{
-          uri: 'https://drive.google.com/uc?id=1q5UQRx8lxn3ISlUzoZas1wDboBguUc9y',
-        }}
+        source={require('../../assets/images/logo.png')}
       />
     </View>
   )
