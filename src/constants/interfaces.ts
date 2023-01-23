@@ -14,7 +14,7 @@ interface IRestaurant {
   address: string
   imageUri: string
   rating: string
-  schedule: string
+  schedule: string[]
   priceRange: string
   coords: string
   tags: string
