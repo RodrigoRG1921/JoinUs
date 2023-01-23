@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { View } from 'react-native'
+import {
+  View
+} from 'react-native'
 import StepIndicator from 'react-native-step-indicator-v2'
 
 import { stepperStyles, styles } from './StepperScreen.styles'

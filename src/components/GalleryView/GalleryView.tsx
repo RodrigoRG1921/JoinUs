@@ -68,7 +68,6 @@ const GalleryView = ({
       const startIndex = blockNumber * imagePerBlockSize
 
       if (fRow) {
-        
         imagesBlocks.push(
           <View style={{ display: 'flex', flexDirection: 'row' }}>
             { firstRow({ imagesSize: fRow, startIndex }) }
