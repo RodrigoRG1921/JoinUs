@@ -1,9 +1,9 @@
 import {StyleSheet} from 'react-native'
 
 const styles = StyleSheet.create({
-  titleBox: {margin: 20},
+  titleBox: {padding: 20, backgroundColor: '#000000'},
   title: {
-    color: 'black',
+    color: 'white',
     fontWeight: 'bold',
     fontSize: 20,
   },
@@ -33,11 +33,14 @@ const styles = StyleSheet.create({
     width: 32,
     fontSize: 24,
     textAlign: 'center',
+    color: 'white'
   },
   faceBorder: {
     borderWidth: 1,
     borderRadius: 50,
     width: 32,
+    marginBottom: 12,
+    borderColor: 'white',
   },
 })
 

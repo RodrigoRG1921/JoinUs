@@ -25,6 +25,7 @@ const PreferencesView = ({
             onPress={() => handleOnChipClick(preference.key)}
             color={preferencesSelectedMap[preference.key] ? 'red' : undefined}
             style={styles.chip}
+            leadingContainerStyle={{ borderColor: '#B71C1C', borderWidth: 1 }}
             key={preference.key}
             variant='outlined'
             label={preference.title} />

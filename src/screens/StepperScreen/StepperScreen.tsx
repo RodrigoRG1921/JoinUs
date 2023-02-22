@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import {
   View
 } from 'react-native'
+import { useIsFocused } from '@react-navigation/native'
 import StepIndicator from 'react-native-step-indicator-v2'
 
 import { stepperStyles, styles } from './StepperScreen.styles'
@@ -29,6 +30,8 @@ const StepperScreen = ({
   labels = defaultLabels,
   ...props
 }: IProps & any) => {
+  const isFocused = useIsFocused()
+
   const [stepperPositionIndex, setStepperPositionIndex] = useState<number>(0)
 
   const { categories, selectedCategory, setSelectedCategory } = useCategoriesHook()
@@ -37,6 +40,11 @@ const StepperScreen = ({
   const { results } = useResultsHook({
     category: selectedCategory, preferences: preferencesSelected, restaurants
   })
+
+  useEffect(() => {
+    console.log('aiudame', isFocused)
+    setStepperPositionIndex(0)
+  }, [isFocused])
 
   useEffect(() => {
     if (!stepperPositionIndex) {
@@ -57,7 +65,6 @@ const StepperScreen = ({
   }
 
   const handleOnRestaurantClick = (restaurant: any) => {
-    
     props.navigation.navigate('RestaurantDetailScreen', { ...restaurant })
   }
 
@@ -90,6 +97,7 @@ const StepperScreen = ({
         <View>
           { stepperPositionIndex > 0 && (
             <ButtonBase
+              titleStyle={{ color: '#B71C1C' }}
               title='Atrás'
               onPress={() => setStepperPositionIndex(stepperPositionIndex-1)}/>
           ) }
@@ -97,6 +105,8 @@ const StepperScreen = ({
         <View>
           { stepperPositionIndex !== 2 && (
             <ButtonBase
+              style={{ borderColor: '#B71C1C' }}
+              titleStyle={{ color: '#B71C1C' }}
               title={buttonTextMap[stepperPositionIndex]}
               onPress={() => setStepperPositionIndex(stepperPositionIndex+1)} />
           ) }

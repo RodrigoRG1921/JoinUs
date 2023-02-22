@@ -14,7 +14,8 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginBottom: 11,
   },
   title: {
     flex: 8
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
   unknownButtons: {
     display: 'flex',
     flexDirection: 'row',
-    marginVertical: 22
+    marginVertical: 11
   },
   button: {
     marginHorizontal: 12

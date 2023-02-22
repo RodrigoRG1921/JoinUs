@@ -2,18 +2,19 @@ import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 5,
-    padding: 12,
+    marginBottom: 5,  
   },
   middleContainer: {
-    marginVertical: 12,
     display: 'flex',
     flexDirection: 'row',
+    borderBottomRightRadius: 5,
+    borderBottomLeftRadius: 5,
   },
   image: {
-    borderRadius: 5,
     width: '100%',
-    height: 150
+    height: 150,
+    borderBottomRightRadius: 5,
+    borderBottomLeftRadius: 5,
   },
   imageContainer: {
     
@@ -30,7 +31,9 @@ const styles = StyleSheet.create({
     fontSize: 50
   },
   bottomContainer: {
-    marginTop: 6
+    marginTop: 6,
+    paddingBottom: 12,
+    paddingLeft: 12,
   }
 })
 

@@ -23,13 +23,22 @@ const RestaurantCard = (props: IProps) => {
   return (
     <TouchableOpacity onPress={() => onPress?.(props)}>
       <Surface elevation={1} style={styles.container}>
-        <View>
-          <Text variant='h6'>{name}</Text>
+        <View style={{ backgroundColor: '#b71c1c', borderTopLeftRadius: 5, borderTopRightRadius: 5, padding: 12, }}>
+          <Text style={{ color: 'white' }} variant='h6'>{name}</Text>
         </View>
         <View style={styles.middleContainer}>
           <Image source={{ uri: imageUri }} style={styles.image} />
         </View>
-        <View>
+        
+      </Surface>
+    </TouchableOpacity>
+  )
+}
+
+export default RestaurantCard
+
+/**
+ <View style={{ padding: 12 }}>
           <View style={styles.informationContainer}>
             <Text variant='subtitle1' style={styles.textAddress} >{address}</Text>
             <Text style={{ height: 35 }} variant='h3'>{'*'.repeat(Number(rating))}</Text>
@@ -39,9 +48,4 @@ const RestaurantCard = (props: IProps) => {
         <View style={styles.bottomContainer}>
           <Text variant='subtitle1'>{schedule}</Text>
         </View>
-      </Surface>
-    </TouchableOpacity>
-  )
-}
-
-export default RestaurantCard
+ */

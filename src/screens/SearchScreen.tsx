@@ -95,7 +95,7 @@ const SearchScreen = (props: any) => {
 
   if (!filter && currentRestaurants.length > 0) {
     return (
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, marginTop: 12}}>
         <View style={{marginHorizontal: 16, marginVertical: 6}}>
           <SearchComponent
             onFilterPress={onFilterPress}

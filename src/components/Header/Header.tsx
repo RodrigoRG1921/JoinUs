@@ -1,8 +1,6 @@
-import React from 'react'
-import {Image, View} from 'react-native'
-import {TouchableOpacity} from 'react-native-gesture-handler'
+import React, {useCallback} from 'react'
+import {Image, View, TouchableOpacity} from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
-import {useCallback} from 'react'
 import {styles} from './Header.styles'
 
 const Header = ({navigation}: any) => {
@@ -10,11 +8,11 @@ const Header = ({navigation}: any) => {
   return (
     <View style={styles.view}>
       <TouchableOpacity onPress={openDrawer}>
-        <Icon name="menu" size={25} color="black" />
+        <Icon name="menu" size={25} color="white" />
       </TouchableOpacity>
       <Image
         style={styles.image}
-        source={require('../../assets/images/logo.png')}
+        source={require('../../assets/images/white_logo.png')}
       />
     </View>
   )

@@ -2,14 +2,17 @@ import {StyleSheet} from 'react-native'
 
 const styles = StyleSheet.create({
   view: {
-    flex: 1,
+    flexGrow: 1,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    backgroundColor: '#000000',
+    padding: 0,
+    margin: 0,
+    paddingRight: 40,
   },
   image: {
     alignContent: 'center',
-    marginRight: 26,
     width: 50,
     height: 40,
   },

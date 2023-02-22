@@ -70,42 +70,62 @@ const DetailView = ({
           <Text variant='h5'>{name}</Text>
         </View>
         <View style={styles.favContainer}>
-          <Icon name='heart' size={26} />
+          
         </View>
         <View style={styles.imageContainer}>
-          <Image source={{ uri: imageUri }} style={styles.image} resizeMode='cover' />
+          <Icon color={'#B71C1C'} name='heart' size={26} />
         </View>
       </View>
 
       <View style={styles.unknownButtons}>
         <Stack style={{ width: '100%' }} spacing={4} direction={'row'} justify={'between'}>
-          <Chip onPress={handleRateChipOnPress} label={
-            <>
-              <Text variant='subtitle1'>{rating}</Text>
-              <Text style={{ height: 38, marginHorizontal: 16 }} variant='h3'>{'*'.repeat(Number(rating))}</Text>
-            </>
-          } />
-          <Chip onPress={handleOnScheduleChipPress} label={<Text variant='subtitle1'>{schedule[0]}</Text>} />
+          <Chip
+            variant='outlined'
+            color={'#B71C1C'}
+            style={{ borderColor: '#B71C1C', borderWidth: 1 }}
+            onPress={handleRateChipOnPress} label={
+              <>
+                <Text style={{ color: '#B71C1C' }} variant='subtitle1'>{rating}</Text>
+                <Text style={{ height: 38, marginHorizontal: 16, color: '#B71C1C' }} variant='h3'>{'*'.repeat(Number(rating))}</Text>
+              </>
+            } />
+
+          <Chip
+            variant='outlined'
+            style={{ borderColor: '#B71C1C', borderWidth: 1 }}
+            label={<Text style={{ color: '#B71C1C' }} variant='subtitle1'>{rating} $$$$$</Text>} />
+
+          <Chip
+            variant='outlined'
+            style={{ borderColor: '#B71C1C', borderWidth: 1 }}
+            onPress={handleReachOnPress} label={<Text style={{ color: '#B71C1C' }} variant='subtitle1'>Cómo llegar</Text>} />
         </Stack>
       </View>
 
       <View style={styles.unknownButtons}>
         <Stack style={{ width: '100%' }} spacing={4} direction={'row'} justify={'between'}>
-          <Chip onPress={handleReachOnPress} label={<Text variant='subtitle1'>Cómo llegar</Text>} />
+          <Chip
+            variant='outlined'
+            style={{ borderColor: '#B71C1C', borderWidth: 1 }}
+            onPress={handleOnScheduleChipPress} label={<Text style={{ color: '#B71C1C' }} variant='subtitle1'>{schedule[0]}</Text>} />
+          
+          <Chip
+            variant='outlined'
+            style={{ borderColor: '#B71C1C', borderWidth: 1 }}
+            label={<Text style={{ color: '#B71C1C' }} variant='subtitle1'>Compartir</Text>} />
 
-          <Chip onPress={handleOnContactChipPress} label={<Text variant='subtitle1'>Contacto</Text>} />
+          <Chip
+            variant='outlined'
+            style={{ borderColor: '#B71C1C', borderWidth: 1 }}
+            onPress={handleOnContactChipPress} label={<Text style={{ color: '#B71C1C' }} variant='subtitle1'>Contacto</Text>} />
 
-          <Chip label={<Text variant='subtitle1'>{rating} $$$$$</Text>} />
+          
+
         </Stack>
       </View>
 
-      <View style={styles.unknownButtons}>
-        <Stack style={{ width: '100%' }} spacing={4} direction={'row'} justify={'between'}>
-          <Chip label={<Text variant='subtitle1'>Compartir</Text>} />
-        </Stack>
-      </View>
 
-      <ScrollView style={{ flexGrow: 1 }}>
+      <ScrollView style={{ flexGrow: 1, marginTop: 11 }}>
         <GalleryView images={images} />
       </ScrollView>
 
@@ -114,3 +134,5 @@ const DetailView = ({
 }
 
 export default DetailView
+
+// B71C1C

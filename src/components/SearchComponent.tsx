@@ -21,6 +21,8 @@ const SearchComponent = ({
   return (
     <View style={styles.container}>
       <TextInput
+        leadingContainerStyle={{ borderColor: 'black' }}
+        inputContainerStyle={{ borderColor: 'black',  }}
         onChangeText={text => onChangeText(text)}
         onSubmitEditing={onSubmitText}
         onPressIn={onPressIn}
@@ -50,7 +52,7 @@ export default SearchComponent
 
 const styles = StyleSheet.create({
   iconContainer: {width: 55, height: 55, marginLeft: 5},
-  text: {flex: 1},
+  text: {flex: 1, borderColor: 'black', color: 'black'},
   container: {
     flexDirection: 'row',
   },
