@@ -39,6 +39,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 16
+  },
+  rateChipContainer: {
+    borderColor: '#B71C1C',
+    borderWidth: 1,
   }
 })
 
