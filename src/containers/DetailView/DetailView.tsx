@@ -59,7 +59,6 @@ const DetailView = ({
   const handleReachOnPress = useCallback(() => {
     onPress?.(coords)
   }, [coords])
-
   return (
     <Surface style={styles.container}>
       <ContactModal isOpen={isContactModalOpen} handleDismiss={handleContactDismissModal} />
@@ -82,11 +81,12 @@ const DetailView = ({
           <Chip
             variant='outlined'
             color={'#B71C1C'}
-            style={{ borderColor: '#B71C1C', borderWidth: 1 }}
+            style={ styles.rateChipContainer}
             onPress={handleRateChipOnPress} label={
               <>
                 <Text style={{ color: '#B71C1C' }} variant='subtitle1'>{rating}</Text>
-                <Text style={{ height: 38, marginHorizontal: 16, color: '#B71C1C' }} variant='h3'>{'*'.repeat(Number(rating))}</Text>
+                {[...Array(Number(Math.floor(Number(rating))))].map((star, index) => <Icon  color={'#B71C1C'} name='star' size={16} key={index}/>)}
+                
               </>
             } />
 
