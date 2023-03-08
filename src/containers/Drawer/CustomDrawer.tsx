@@ -49,7 +49,7 @@ const CustomDrawer = (props: DrawerContentComponentProps) => {
               </View>
               <View style={styles.drawerSection}>
                 <DrawerItem
-                  label="Favoritos*"
+                  label="Favoritos"
                   style={styles.drawerItem}
                   labelStyle={styles.labelStyle}
                   onPress={handleFavoritesPress}
