@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react'
-import { View, Image, ScrollView } from 'react-native'
+import { View, Image, ScrollView, Linking, Platform } from 'react-native'
 import { Surface, Text, Chip, Stack } from '@react-native-material/core'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import EvilIcon from 'react-native-vector-icons/EvilIcons'
@@ -61,7 +61,21 @@ const DetailView = ({
   }, [isRateModalOpen])
 
   const handleReachOnPress = useCallback(() => {
-    onPress?.(coords)
+    const [lat, lng] = coords.split(',')
+    // openMap({ latitude: parseInt(lat), longitude: parseInt(lng) })
+    const scheme = Platform.select({
+      ios: 'maps:0,0?q=',
+      android: 'geo:0,0?q=',
+    })
+    const latLng = `${lat},${lng}`
+    const label = 'Ir'
+    const url = Platform.select({
+      ios: `${scheme}${label}@${latLng}`,
+      android: `${scheme}${latLng}(${label})`,
+    })
+    if (url) {
+      Linking.openURL(url)
+    }
   }, [coords])
 
   const handleBudgetChipPress = useCallback(() => {

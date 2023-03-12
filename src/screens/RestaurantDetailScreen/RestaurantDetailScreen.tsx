@@ -3,6 +3,7 @@ import { Provider } from '@react-native-material/core'
 import openMap, { createOpenLink } from 'react-native-open-maps'
 
 import DetailView from '../../containers/DetailView'
+import { Linking, Platform } from 'react-native'
 
 const images = [
   'https://media.istockphoto.com/photos/table-top-view-of-spicy-food-picture-id1316145932?b=1&k=20&m=1316145932&s=170667a&w=0&h=feyrNSTglzksHoEDSsnrG47UoY_XX4PtayUPpSMunQI=',
@@ -30,9 +31,22 @@ const RestaurantDetailScreen = (props: any) => {
   console.log(props.route.params)
   console.log('===========')
   const handleRestaurantClick = useCallback((coords: string) => {
+    console.log('click if')
     const [lat, lng] = coords.split(',')
     // openMap({ latitude: parseInt(lat), longitude: parseInt(lng) })
-    createOpenLink({ latitude: parseInt(lat), longitude: parseInt(lng) })
+    const scheme = Platform.select({
+      ios: 'maps:0,0?q=',
+      android: 'geo:0,0?q=',
+    })
+    const latLng = `${lat},${lng}`
+    const label = 'Ir'
+    const url = Platform.select({
+      ios: `${scheme}${label}@${latLng}`,
+      android: `${scheme}${latLng}(${label})`,
+    })
+    if (url) {
+      Linking.openURL(url)
+    }
   }, [])
 
   return (
