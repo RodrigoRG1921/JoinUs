@@ -1,6 +1,6 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 import React, { useEffect } from 'react'
-import { Text } from 'react-native'
+import { Text, Image } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 import { styles } from './SplashScreen.styles'
@@ -27,10 +27,7 @@ const SplashScreen = ({
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text>
-        <Text style={styles.mainText}>J</Text>
-        <Text style={styles.secondaryText}>U</Text>
-      </Text>
+      <Image style={{ height: 450, width: 450 }} source={require('../../assets/images/splashscreen.jpg')}/>
     </SafeAreaView>
   )
 }
