@@ -11,7 +11,7 @@ import {styles} from './CustomDrawer.styles'
 const CustomDrawer = (props: DrawerContentComponentProps) => {
   const [favorites, setFavorites] = useState(false)
   const navigateToSearchScreen = useCallback(() => {
-    props.navigation.navigate('SearchScreen')
+    props.navigation.navigate('SearchNavigator')
   }, [])
   const navigateToStepper = useCallback(() => {
     props.navigation.navigate('StepperNavigator')
@@ -35,16 +35,16 @@ const CustomDrawer = (props: DrawerContentComponentProps) => {
             <View>
               <View style={styles.drawerSection}>
                 <DrawerItem
-                  labelStyle={styles.labelStyle}
-                  style={styles.drawerItem}
-                  label="Busqueda"
-                  onPress={navigateToSearchScreen}
-                />
-                <DrawerItem
                   label="Encontrar mi lugar"
                   style={styles.drawerItem}
                   labelStyle={styles.labelStyle}
                   onPress={navigateToStepper}
+                />
+                <DrawerItem
+                  labelStyle={styles.labelStyle}
+                  style={styles.drawerItem}
+                  label="Busqueda"
+                  onPress={navigateToSearchScreen}
                 />
               </View>
               <View style={styles.drawerSection}>

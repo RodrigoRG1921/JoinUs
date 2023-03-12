@@ -105,14 +105,17 @@ const DetailView = ({
 
           <Chip
             variant='outlined'
+
             style={{ borderColor: '#B71C1C', borderWidth: 1, width: 100}}
             contentContainerStyle={{width: 100, flexDirection: 'row', justifyContent: 'center'  }}
             label={<Text style={{ color: '#B71C1C' }} variant='subtitle1'>{priceRange} {priceRangeLength}</Text>} 
             onPress = {handleBudgetChipPress}/>
 
+
           <Chip
             variant='outlined'
-            style={{ borderColor: '#B71C1C', borderWidth: 1 }}
+            style={{ borderColor: '#B71C1C', borderWidth: 1}}
+            color="#B71C1C"
             onPress={handleReachOnPress} label={<Text style={{ color: '#B71C1C' }} variant='subtitle1'>Cómo llegar</Text>} />
         </Stack>
       </View>
@@ -122,15 +125,18 @@ const DetailView = ({
           <Chip
             variant='outlined'
             style={{ borderColor: '#B71C1C', borderWidth: 1 }}
+            color={'#B71C1C'}
             onPress={handleOnScheduleChipPress} label={<Text style={{ color: '#B71C1C' }} variant='subtitle1'>{schedule[0]}</Text>} />
-          
+
           <Chip
             variant='outlined'
+            color={'#B71C1C'}
             style={{ borderColor: '#B71C1C', borderWidth: 1 }}
             label={<Text style={{ color: '#B71C1C' }} variant='subtitle1'>Compartir</Text>} />
 
           <Chip
             variant='outlined'
+            color={'#B71C1C'}
             style={{ borderColor: '#B71C1C', borderWidth: 1 }}
             onPress={handleOnContactChipPress} label={<Text style={{ color: '#B71C1C' }} variant='subtitle1'>Contacto</Text>} />
 

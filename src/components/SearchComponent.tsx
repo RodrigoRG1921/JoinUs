@@ -1,14 +1,15 @@
 import React from 'react'
 import {View, TouchableOpacity, StyleSheet} from 'react-native'
-import {TextInput, IconButton, Surface} from '@react-native-material/core'
+import {IconButton, Surface} from '@react-native-material/core'
 import Icon from 'react-native-vector-icons/MaterialIcons'
+import { TextInput } from 'react-native'
 
 interface Props {
-  onFilterPress: () => void
+  onFilterPress?: () => void
   onChangeText: (text: string) => void
-  onSubmitText: () => void
+  onSubmitText?: () => void
   currentText: string
-  onPressIn: () => void
+  onPressIn?: () => void
 }
 
 const SearchComponent = ({
@@ -21,29 +22,14 @@ const SearchComponent = ({
   return (
     <View style={styles.container}>
       <TextInput
-        leadingContainerStyle={{ borderColor: 'black' }}
-        inputContainerStyle={{ borderColor: 'black',  }}
-        onChangeText={text => onChangeText(text)}
-        onSubmitEditing={onSubmitText}
-        onPressIn={onPressIn}
-        variant="outlined"
+        style={{
+          height: 30, borderColor: 'white', borderWidth: 1, color: 'white',
+          flexGrow: 1,
+          borderRadius: 5,
+        }}
+        onChangeText={onChangeText}
         value={currentText}
-        label="Search"
-        style={styles.text}
-        trailing={props => (
-          <IconButton
-            icon={props => (
-              <Icon name="search" style={{fontSize: 30}} {...props} />
-            )}
-            {...props}
-          />
-        )}
       />
-      <TouchableOpacity onPress={onFilterPress}>
-        <Surface style={styles.iconContainer} elevation={8}>
-          <Icon name="filter-alt" size={50} color="black" />
-        </Surface>
-      </TouchableOpacity>
     </View>
   )
 }
@@ -51,9 +37,9 @@ const SearchComponent = ({
 export default SearchComponent
 
 const styles = StyleSheet.create({
-  iconContainer: {width: 55, height: 55, marginLeft: 5},
-  text: {flex: 1, borderColor: 'black', color: 'black'},
+  text: { borderColor: 'black', color: 'white', flexGrow: 1, height: 30 },
   container: {
     flexDirection: 'row',
+    flexGrow: 1,
   },
 })
