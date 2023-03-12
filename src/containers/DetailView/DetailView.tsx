@@ -70,7 +70,7 @@ const DetailView = ({
   const handleBudgetDismissModal = useCallback(() => {
     setBudgetModalOpen(false)
   }, [isBudgetModalOpen])
-  console.log(priceRange)
+  const priceRangeLength = priceRange.length.toFixed(1)
   return (
     <Surface style={styles.container}>
       <ContactModal isOpen={isContactModalOpen} handleDismiss={handleContactDismissModal} />
@@ -107,7 +107,7 @@ const DetailView = ({
             variant='outlined'
             style={{ borderColor: '#B71C1C', borderWidth: 1, width: 100}}
             contentContainerStyle={{width: 100, flexDirection: 'row', justifyContent: 'center'  }}
-            label={<Text style={{ color: '#B71C1C' }} variant='subtitle1'>{priceRange.length}.0 {priceRange}</Text>} 
+            label={<Text style={{ color: '#B71C1C' }} variant='subtitle1'>{priceRange} {priceRangeLength}</Text>} 
             onPress = {handleBudgetChipPress}/>
 
           <Chip
