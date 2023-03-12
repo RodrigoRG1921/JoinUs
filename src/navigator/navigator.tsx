@@ -145,13 +145,13 @@ const SearchNavigator = ({navigation}: any) => (
 
 const DrawerNavigator = () => (
   <Drawer.Navigator
-    initialRouteName="SearchNavigator"
+    initialRouteName="StepperNavigator"
     screenOptions={{
       headerShown: false,
     }}
     drawerContent={props => <CustomDrawer {...props} />}>
-    <Drawer.Screen name="SearchNavigator" component={SearchNavigator} />
     <Drawer.Screen name="StepperNavigator" component={StepperNavigator} />
+    <Drawer.Screen name="SearchNavigator" component={SearchNavigator} />
   </Drawer.Navigator>
 )
 
