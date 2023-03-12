@@ -1,10 +1,10 @@
-import React, {useState, useCallback} from 'react'
+import React, {useState, useCallback, useEffect} from 'react'
 import FilterComponent from '../components/Filter/FilterComponent'
-import SearchComponent from '../components/SearchComponent'
 import restaurantsJSON from '../data/restaurants.json'
 import ViewContainer from '../components/ViewContainer'
 import ResultsView from '../containers/ResultsView'
 import {View, Text} from 'react-native'
+import { useAppContext as useGeneralContext } from '../context/store/general'
 
 interface Restaurant {
   name: string
@@ -24,6 +24,21 @@ const SearchScreen = (props: any) => {
   const [currentRestaurants, setCurrentRestaurants] = useState(restaurants)
   const [currentFilters, setCurrentFilters] = useState<string[]>([])
   const [currentText, setCurrentText] = useState('')
+
+  const { state } = useGeneralContext()
+
+  useEffect(() => {
+    setCurrentText(state.inputText)
+    if (state.inputText === '') {
+      setCurrentRestaurants(restaurantsJSON)
+    } else {
+      const restaurantes = currentRestaurants.filter(restaurant => {
+        const name = restaurant.name.toLowerCase()
+        return name.includes(state.inputText.toLocaleLowerCase())
+      })
+      setCurrentRestaurants(restaurantes)
+    }
+  }, [state.inputText])
 
   const onChangeText = useCallback(
     (text: string) => {
@@ -96,15 +111,6 @@ const SearchScreen = (props: any) => {
   if (!filter && currentRestaurants.length > 0) {
     return (
       <View style={{flex: 1, marginTop: 12}}>
-        <View style={{marginHorizontal: 16, marginVertical: 6}}>
-          <SearchComponent
-            onFilterPress={onFilterPress}
-            onChangeText={onChangeText}
-            onSubmitText={onSubmitText}
-            currentText={currentText}
-            onPressIn={onPressIn}
-          />
-        </View>
         <ResultsView
           onPress={handleOnRestaurantClick}
           results={currentRestaurants}
@@ -121,15 +127,7 @@ const SearchScreen = (props: any) => {
   } else {
     return (
       <ViewContainer>
-        <SearchComponent
-          onFilterPress={onFilterPress}
-          onChangeText={onChangeText}
-          onSubmitText={onSubmitText}
-          currentText={currentText}
-          onPressIn={onPressIn}
-        />
-
-        <Text>No restaurants with this characteristics </Text>
+        <Text>No hay restaurantes con ese nombre</Text>
       </ViewContainer>
     )
   }

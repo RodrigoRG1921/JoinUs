@@ -16,6 +16,10 @@ import CustomDrawer from '../containers/Drawer/CustomDrawer'
 import {Image, TouchableOpacity} from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
+import HeaderSearchBar from '../components/HeaderSearchBar'
+
+import { AppContextProvider as StateProvider } from '../context/store/index'
+
 const Stack = createNativeStackNavigator<RootStackParamList>()
 const Drawer = createDrawerNavigator()
 
@@ -99,32 +103,7 @@ const SearchNavigator = ({navigation}: any) => (
       component={SearchScreen}
       options={{
         headerStyle: { backgroundColor: '#000000' },
-        headerRight: () => (
-          <Image
-            style={{
-              alignContent: 'center',
-              width: 50,
-              height: 40,
-            }}
-            source={require('../assets/images/white_logo.png')}
-          />
-        ),
-        headerLeft: (props) => {
-          if (props.canGoBack) {
-            return (
-              <HeaderBackButton {...props} onPress={() => navigation.goBack()} />
-            )
-          }
-          // eslint-disable-next-line react/prop-types
-          const openDrawer = useCallback(() => navigation.openDrawer(), [])
-
-          return (
-            <TouchableOpacity onPress={openDrawer}>
-              <Icon name="menu" size={25} color="white" />
-            </TouchableOpacity>
-          )
-        },
-        headerTitle: () => <></>,
+        headerTitle: (props) => <HeaderSearchBar {...props} navigation={navigation} />,
       }}
     />
     <Stack.Screen
@@ -179,14 +158,16 @@ const DrawerNavigator = () => (
 const Navigator = () => (
   <SafeAreaProvider>
     <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="SplashScreen"
-        screenOptions={{
-          headerShown: false,
-        }}>
-        <Stack.Screen name="SplashScreen" component={SplashScreen} />
-        <Stack.Screen name="DrawerNavigator" component={DrawerNavigator} />
-      </Stack.Navigator>
+      <StateProvider>
+        <Stack.Navigator
+          initialRouteName="SplashScreen"
+          screenOptions={{
+            headerShown: false,
+          }}>
+          <Stack.Screen name="SplashScreen" component={SplashScreen} />
+          <Stack.Screen name="DrawerNavigator" component={DrawerNavigator} />
+        </Stack.Navigator>
+      </StateProvider>
     </NavigationContainer>
   </SafeAreaProvider>
 )
