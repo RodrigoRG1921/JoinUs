@@ -2,6 +2,7 @@ import React, { useState, useCallback } from 'react'
 import { View, Image, ScrollView } from 'react-native'
 import { Surface, Text, Chip, Stack } from '@react-native-material/core'
 import Icon from 'react-native-vector-icons/MaterialIcons'
+import EvilIcon from 'react-native-vector-icons/EvilIcons'
 
 import { IRestaurant } from '../../constants'
 import { styles } from './DetailView.styles'
@@ -72,7 +73,7 @@ const DetailView = ({
           
         </View>
         <View style={styles.imageContainer}>
-          <Icon color={'#B71C1C'} name='heart' size={26} />
+          <EvilIcon color={'#B71C1C'} name='heart' size={26} />
         </View>
       </View>
 
