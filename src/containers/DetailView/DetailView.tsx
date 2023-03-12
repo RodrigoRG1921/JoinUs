@@ -11,6 +11,7 @@ import ScheduleModal from '../../components/ScheduleModal'
 import RateModal from '../../components/RateModal/RateModal'
 
 import GalleryView from '../../components/GalleryView'
+import BudgetModal from '../../components/BudgetModal'
 
 interface IProps {
   onPress?: (coords: string) => void;
@@ -31,6 +32,8 @@ const DetailView = ({
   const [isContactModalOpen, setContactModalOpen] = useState<boolean>(false)
   const [isScheduleModalOpen, setScheduleModalOpen] = useState<boolean>(false)
   const [isRateModalOpen, setRateModalOpen] = useState<boolean>(false)
+  const [isBudgetModalOpen, setBudgetModalOpen] = useState<boolean>(false)
+
 
   const handleContactDismissModal = useCallback(() => {
     setContactModalOpen(false)
@@ -59,11 +62,21 @@ const DetailView = ({
   const handleReachOnPress = useCallback(() => {
     onPress?.(coords)
   }, [coords])
+
+  const handleBudgetChipPress = useCallback(() => {
+    setBudgetModalOpen(true)
+  }, [isBudgetModalOpen])
+
+  const handleBudgetDismissModal = useCallback(() => {
+    setBudgetModalOpen(false)
+  }, [isBudgetModalOpen])
+  const priceRangeLength = priceRange.length.toFixed(1)
   return (
     <Surface style={styles.container}>
       <ContactModal isOpen={isContactModalOpen} handleDismiss={handleContactDismissModal} />
       <ScheduleModal schedule={schedule} isOpen={isScheduleModalOpen} handleDismiss={handleScheduleDismissModal} />
       <RateModal isOpen={isRateModalOpen} handleDismiss={handleDismissRateModal} rate={rating} />
+      <BudgetModal isOpen={isBudgetModalOpen} handleDismiss={handleBudgetDismissModal}  price={priceRange}/>
       <View style={styles.titleContainer}>
         <View style={styles.title}>
           <Text variant='h5'>{name}</Text>
@@ -92,9 +105,12 @@ const DetailView = ({
 
           <Chip
             variant='outlined'
-            color="#B71C1C"
-            style={ styles.rateChipContainer}
-            label={<Text style={{ color: '#B71C1C' }} variant='subtitle1'>{rating} $$$$$</Text>} />
+
+            style={{ borderColor: '#B71C1C', borderWidth: 1, width: 100}}
+            contentContainerStyle={{width: 100, flexDirection: 'row', justifyContent: 'center'  }}
+            label={<Text style={{ color: '#B71C1C' }} variant='subtitle1'>{priceRange} {priceRangeLength}</Text>} 
+            onPress = {handleBudgetChipPress}/>
+
 
           <Chip
             variant='outlined'
