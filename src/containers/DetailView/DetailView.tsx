@@ -93,7 +93,7 @@ const DetailView = ({
           <Chip
             variant='outlined'
             color="#B71C1C"
-            style={{ borderColor: '#B71C1C', borderWidth: 1}}
+            style={ styles.rateChipContainer}
             label={<Text style={{ color: '#B71C1C' }} variant='subtitle1'>{rating} $$$$$</Text>} />
 
           <Chip
