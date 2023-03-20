@@ -20,6 +20,11 @@ import HeaderSearchBar from '../components/HeaderSearchBar'
 
 import { AppContextProvider as StateProvider } from '../context/store/index'
 
+import { LogBox } from 'react-native'
+
+LogBox.ignoreLogs(['Warning: ...'])
+LogBox.ignoreAllLogs()
+
 const Stack = createNativeStackNavigator<RootStackParamList>()
 const Drawer = createDrawerNavigator()
 
@@ -60,7 +65,7 @@ const StepperNavigator = ({navigation}: any) => (
     />
 
     <Stack.Screen
-      name="RestaurantDetailScreen"
+      name="RestaurantDetailScreenStepper"
       component={RestaurantDetailScreen}
       options={{
         headerStyle: { backgroundColor: '#000000' },
@@ -75,21 +80,6 @@ const StepperNavigator = ({navigation}: any) => (
             source={require('../assets/images/white_logo.png')}
           />
         ),
-        headerLeft: (props) => {
-          if (props.canGoBack) {
-            return (
-              <HeaderBackButton {...props} onPress={() => navigation.navigate('StepperScreen', { replace: true })} />
-            )
-          }
-          // eslint-disable-next-line react/prop-types
-          const openDrawer = useCallback(() => navigation.openDrawer(), [])
-
-          return (
-            <TouchableOpacity onPress={openDrawer}>
-              <Icon name="menu" size={25} color="white" />
-            </TouchableOpacity>
-          )
-        },
         headerTitle: () => <></>,
       }}
     />
@@ -122,21 +112,6 @@ const SearchNavigator = ({navigation}: any) => (
             source={require('../assets/images/white_logo.png')}
           />
         ),
-        headerLeft: (props) => {
-          if (props.canGoBack) {
-            return (
-              <HeaderBackButton {...props} onPress={() => navigation.navigate('SearchScreen', { replace: true })} />
-            )
-          }
-          // eslint-disable-next-line react/prop-types
-          const openDrawer = useCallback(() => navigation.openDrawer(), [])
-
-          return (
-            <TouchableOpacity onPress={openDrawer}>
-              <Icon name="menu" size={25} color="white" />
-            </TouchableOpacity>
-          )
-        },
         headerTitle: () => <></>,
       }}
     />

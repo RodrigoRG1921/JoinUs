@@ -1,10 +1,7 @@
 import React, {useCallback} from 'react'
 import {Image, View, TouchableOpacity} from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
-import { HeaderBackButton } from '@react-navigation/elements'
 import { TextInput } from 'react-native'
-
-import SearchComponent from '../SearchComponent'
 
 import { useAppContext as useGeneralContext } from '../../context/store/general'
 import { Types } from '../../context/reducer/general'
@@ -22,12 +19,6 @@ const HeaderSearch = ({ navigation, ...props }: any) => {
     })
   }, [])
 
-  if (props.canGoBack) {
-    return (
-      <HeaderBackButton {...props} onPress={() => props.navigation.goBack()} />
-    )
-  }
-
   return (
     <View style={{
       flexGrow: 1,
@@ -39,19 +30,16 @@ const HeaderSearch = ({ navigation, ...props }: any) => {
       margin: 0,
       paddingRight: 40,
     }}>
-      {props.canGoBack ? (
-        <HeaderBackButton {...props} onPress={() => props.navigation.goBack()} />
-      ): (
-        <TouchableOpacity onPress={openDrawer}>
-          <Icon name="menu" size={25} color="white" />
-        </TouchableOpacity>
-      )}
-      <View style={{ height: 40, flexGrow: 1, marginHorizontal: 12 }}>
+      <TouchableOpacity onPress={openDrawer}>
+        <Icon name="menu" size={25} color="white" />
+      </TouchableOpacity>
+      <View style={{ height: 30, flexGrow: 1, marginHorizontal: 12, display: 'flex', justifyContent: 'center', }}>
         <TextInput
           style={{
-            height: 30, borderColor: 'white', borderWidth: 1, color: 'white',
+            height: 35, borderColor: 'white', borderWidth: 1, color: 'white',
             flexGrow: 1,
             borderRadius: 5,
+            justifyContent: 'center'
           }}
           onChangeText={handleOnChangeText}
           value={state.inputText}

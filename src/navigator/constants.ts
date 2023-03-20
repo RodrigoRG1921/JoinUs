@@ -6,6 +6,8 @@ type RootStackParamList = {
   SearchScreen: undefined;
 
   StepperScreen: undefined;
+
+  RestaurantDetailScreenStepper: undefined;
 }
 
 export type {

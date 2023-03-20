@@ -65,7 +65,7 @@ const StepperScreen = ({
   }
 
   const handleOnRestaurantClick = (restaurant: any) => {
-    props.navigation.navigate('RestaurantDetailScreen', { ...restaurant })
+    props.navigation.navigate('RestaurantDetailScreenStepper', { ...restaurant })
   }
 
   const renderViewByPositionIndex = (positionIndex: number) => {

@@ -1,15 +1,13 @@
 import React from 'react'
-import { View, TouchableOpacity, StyleSheet } from 'react-native'
+import { TouchableOpacity, StyleSheet } from 'react-native'
 import {
   Dialog,
   DialogHeader,
   DialogContent,
-  Text,
   Stack,
-  Chip,
 } from '@react-native-material/core'
 import Icon from 'react-native-vector-icons/MaterialIcons'
-import IonIcon from 'react-native-vector-icons/Ionicons'
+import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome'
 
 interface IProps {
   isOpen: boolean;
@@ -30,7 +28,7 @@ const ContactModal = ({
             <Icon name='facebook' size={27} color='#4267B2' />
           </TouchableOpacity>
           <TouchableOpacity style={Styles.iconContainer}>
-            <IonIcon name='instagram' size={25} />
+            <FontAwesomeIcon name='instagram' size={25} color={'#E1306C'} />
           </TouchableOpacity>
           <TouchableOpacity style={Styles.iconContainer}>
             <Icon name='phone' size={25} color='#009688' />

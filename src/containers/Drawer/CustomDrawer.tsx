@@ -21,10 +21,10 @@ const CustomDrawer = (props: DrawerContentComponentProps) => {
   }
   return (
     <DrawerContentScrollView
-      contentContainerStyle={{flex: 1, paddingHorizontal: 8}}
+      contentContainerStyle={{flex: 1, paddingHorizontal: 8, backgroundColor: 'black'}}
       {...props}>
       {!favorites ? (
-        <View style={{flex: 1}}>
+        <View style={{flex: 1, backgroundColor: 'white'}}>
           <View style={styles.titleBox}>
             <View style={styles.faceBorder}>
               <Text style={styles.face}>{':)'}</Text>

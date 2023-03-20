@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { FlatList, View } from 'react-native'
+import { FlatList, View, Text } from 'react-native'
 
 import { styles } from './ResultsView.styles'
 
@@ -24,6 +24,16 @@ const ResultsView = ({
       <RestaurantCard onPress={onPress} { ...item } />
     </View>
   ), [])
+
+  if (!results.length) {
+    return (
+      <View style={{ flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center', }}>
+        <Text>No hay restaurantes con esas caracteristicas</Text>
+      </View>
+    )
+  }
 
   return (
     <FlatList

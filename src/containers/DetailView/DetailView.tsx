@@ -1,8 +1,11 @@
 import React, { useState, useCallback } from 'react'
-import { View, Image, ScrollView, Linking, Platform } from 'react-native'
+import { View, ScrollView, Linking, Platform, TouchableOpacity } from 'react-native'
 import { Surface, Text, Chip, Stack } from '@react-native-material/core'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import EvilIcon from 'react-native-vector-icons/EvilIcons'
+import FontAwesoneIcon from 'react-native-vector-icons/FontAwesome'
+
+import Share, { ShareOptions } from 'react-native-share'
 
 import { IRestaurant } from '../../constants'
 import { styles } from './DetailView.styles'
@@ -34,6 +37,7 @@ const DetailView = ({
   const [isScheduleModalOpen, setScheduleModalOpen] = useState<boolean>(false)
   const [isRateModalOpen, setRateModalOpen] = useState<boolean>(false)
   const [isBudgetModalOpen, setBudgetModalOpen] = useState<boolean>(false)
+  const [isFav, setIsFav] = useState<boolean>(false)
 
 
   const handleContactDismissModal = useCallback(() => {
@@ -62,7 +66,6 @@ const DetailView = ({
 
   const handleReachOnPress = useCallback(() => {
     const [lat, lng] = coords.split(',')
-    // openMap({ latitude: parseInt(lat), longitude: parseInt(lng) })
     const scheme = Platform.select({
       ios: 'maps:0,0?q=',
       android: 'geo:0,0?q=',
@@ -85,7 +88,23 @@ const DetailView = ({
   const handleBudgetDismissModal = useCallback(() => {
     setBudgetModalOpen(false)
   }, [isBudgetModalOpen])
+
   const priceRangeLength = priceRange.length.toFixed(1)
+
+  const handleOnShare = useCallback(() => {
+    const options: ShareOptions = {
+      title: `${name}`,
+      message: `Conoce más de ${name} a través de JoinUs app`,
+    }
+    Share.open(options)
+      .then((res) => {
+        console.log(res)
+      })
+      .catch((err) => {
+        err && console.error(err)
+      })
+  }, [name, imageUri])
+
   return (
     <Surface style={styles.container}>
       <ContactModal isOpen={isContactModalOpen} handleDismiss={handleContactDismissModal} />
@@ -94,14 +113,14 @@ const DetailView = ({
       <BudgetModal isOpen={isBudgetModalOpen} handleDismiss={handleBudgetDismissModal}  price={priceRange}/>
       <View style={styles.titleContainer}>
         <View style={styles.title}>
-          <Text variant='h5'>{name}</Text>
+          <Text style={{ color: 'black' }} variant='h5'>{name}</Text>
         </View>
         <View style={styles.favContainer}>
           
         </View>
-        <View style={styles.imageContainer}>
-          <EvilIcon color={'#B71C1C'} name='heart' size={26} />
-        </View>
+        <TouchableOpacity style={styles.imageContainer} onPress={() => setIsFav(!isFav)}>
+          {isFav ? <FontAwesoneIcon name='heart' color='#B71C1C' size={28} /> : <EvilIcon color={'#B71C1C'} name='heart' size={27} />}
+        </TouchableOpacity>
       </View>
 
       <View style={styles.unknownButtons}>
@@ -109,7 +128,7 @@ const DetailView = ({
           <Chip
             variant='outlined'
             color={'#B71C1C'}
-            style={ styles.rateChipContainer}
+            style={styles.rateChipContainer}
             onPress={handleRateChipOnPress} label={
               <>
                 <Text style={{ color: '#B71C1C' }} variant='subtitle1'>{rating}</Text>
@@ -125,7 +144,6 @@ const DetailView = ({
             contentContainerStyle={{width: 100, flexDirection: 'row', justifyContent: 'center'  }}
             label={<Text style={{ color: '#B71C1C' }} variant='subtitle1'>{priceRange} {priceRangeLength}</Text>} 
             onPress = {handleBudgetChipPress}/>
-
 
           <Chip
             variant='outlined'
@@ -144,6 +162,7 @@ const DetailView = ({
             onPress={handleOnScheduleChipPress} label={<Text style={{ color: '#B71C1C' }} variant='subtitle1'>{schedule[0]}</Text>} />
 
           <Chip
+            onPress={handleOnShare}
             variant='outlined'
             color={'#B71C1C'}
             style={{ borderColor: '#B71C1C', borderWidth: 1 }}
@@ -154,12 +173,8 @@ const DetailView = ({
             color={'#B71C1C'}
             style={{ borderColor: '#B71C1C', borderWidth: 1 }}
             onPress={handleOnContactChipPress} label={<Text style={{ color: '#B71C1C' }} variant='subtitle1'>Contacto</Text>} />
-
-          
-
         </Stack>
       </View>
-
 
       <ScrollView style={{ flexGrow: 1, marginTop: 11 }}>
         <GalleryView images={images} />
