@@ -68,6 +68,7 @@ const StepperNavigator = ({navigation}: any) => (
       name="RestaurantDetailScreenStepper"
       component={RestaurantDetailScreen}
       options={{
+        headerBackTitle: '',
         headerStyle: { backgroundColor: '#000000' },
         headerTintColor: '#B71C1C',
         headerRight: () => (
@@ -100,6 +101,7 @@ const SearchNavigator = ({navigation}: any) => (
       name="RestaurantDetailScreen"
       component={RestaurantDetailScreen}
       options={{
+        headerBackTitle: '',
         headerStyle: { backgroundColor: '#000000' },
         headerTintColor: '#B71C1C',
         headerRight: () => (
