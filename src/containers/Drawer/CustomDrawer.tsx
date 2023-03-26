@@ -35,7 +35,7 @@ const CustomDrawer = (props: DrawerContentComponentProps) => {
             <View>
               <View style={styles.drawerSection}>
                 <DrawerItem
-                  label="Encontrar mi lugar"
+                  label="Explorar"
                   style={styles.drawerItem}
                   labelStyle={styles.labelStyle}
                   onPress={navigateToStepper}

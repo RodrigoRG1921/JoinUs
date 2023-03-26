@@ -19,10 +19,10 @@ const DrawerFavorites = ({onPress, ...props}: any) => {
     const restaurant = restaurants.find(
       restaurant => restaurant.name === restaurantName,
     )
-    props.navigation.navigate('RestaurantDetailScreen', {...restaurant})
+    props.navigation.navigate('RestaurantDetailScreenDrawer', {...restaurant})
   }
   return (
-    <View>
+    <View style={styles.root}>
       <View style={styles.titleBox}>
         <TouchableOpacity onPress={onPress}>
           <Icon name="west" size={25} color="black" />

@@ -94,7 +94,7 @@ const DetailView = ({
   const handleOnShare = useCallback(() => {
     const options: ShareOptions = {
       title: `${name}`,
-      message: `Conoce más de ${name} a través de JoinUs app`,
+      message: `Conoce más de ${name} a través de EnJoinUs app`,
     }
     Share.open(options)
       .then((res) => {

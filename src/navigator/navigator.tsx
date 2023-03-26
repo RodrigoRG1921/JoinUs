@@ -70,7 +70,7 @@ const StepperNavigator = ({navigation}: any) => (
       options={{
         headerBackTitle: '',
         headerStyle: { backgroundColor: '#000000' },
-        headerTintColor: '#B71C1C',
+        headerTintColor: 'white',
         headerRight: () => (
           <Image
             style={{
@@ -103,7 +103,7 @@ const SearchNavigator = ({navigation}: any) => (
       options={{
         headerBackTitle: '',
         headerStyle: { backgroundColor: '#000000' },
-        headerTintColor: '#B71C1C',
+        headerTintColor: 'white',
         headerRight: () => (
           <Image
             style={{
@@ -120,7 +120,7 @@ const SearchNavigator = ({navigation}: any) => (
   </Stack.Navigator>
 )
 
-const DrawerNavigator = () => (
+const DrawerNavigator = ({navigation}: any) => (
   <Drawer.Navigator
     initialRouteName="StepperNavigator"
     screenOptions={{
@@ -129,6 +129,13 @@ const DrawerNavigator = () => (
     drawerContent={props => <CustomDrawer {...props} />}>
     <Drawer.Screen name="StepperNavigator" component={StepperNavigator} />
     <Drawer.Screen name="SearchNavigator" component={SearchNavigator} />
+    <Drawer.Screen
+      name="RestaurantDetailScreenDrawer"
+      component={RestaurantDetailScreen}
+      options={{
+        headerStyle: { backgroundColor: '#000000' },
+        headerTitle: (props) => <HeaderSearchBar {...props} navigation={navigation} />,
+      }}/>
   </Drawer.Navigator>
 )
 

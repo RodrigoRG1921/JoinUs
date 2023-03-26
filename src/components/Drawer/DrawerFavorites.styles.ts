@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
   },
   drawerSection: {
     borderTopWidth: 1,
+    backgroundColor: 'white',
   },
   drawerSections: {
     display: 'flex',
@@ -25,6 +26,11 @@ const styles = StyleSheet.create({
     display: 'flex',
     marginVertical: 0,
     paddingVertical: 0,
+  },
+  root: {
+    backgroundColor: 'white',
+    display: 'flex',
+    flex: 1,
   },
 })
 

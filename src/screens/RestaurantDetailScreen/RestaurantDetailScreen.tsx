@@ -31,7 +31,6 @@ const RestaurantDetailScreen = (props: any) => {
   console.log(props.route.params)
   console.log('===========')
   const handleRestaurantClick = useCallback((coords: string) => {
-    console.log('click if')
     const [lat, lng] = coords.split(',')
     // openMap({ latitude: parseInt(lat), longitude: parseInt(lng) })
     const scheme = Platform.select({
